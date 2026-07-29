@@ -1,0 +1,645 @@
+{
+  "last_updated": "2026-07-29",
+  "schema_version": "1.0",
+  "notes": "RPM = requests/minute, TPM = tokens/minute, RPD = requests/day, TPD = tokens/day. ITPM/OTPM = input/output tokens per minute (Anthropic-style). Null means not published or not applicable. Limits apply per API key unless noted.",
+  "models": [
+    {
+      "provider": "OpenAI",
+      "provider_id": "openai",
+      "model_id": "gpt-5.5",
+      "model_name": "GPT-5.5",
+      "docs_url": "https://platform.openai.com/docs/guides/rate-limits",
+      "notes": "GPT-5.5 and GPT-5.4 share identical rate limit profiles across all tiers. No free API tier for GPT-5.x models.",
+      "limits": {
+        "tier-1": {
+          "spend_threshold_usd": 5,
+          "rpm": 500,
+          "tpm": 500000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-2": {
+          "spend_threshold_usd": 50,
+          "rpm": 5000,
+          "tpm": 800000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "7+ days since first successful payment required"
+        },
+        "tier-3": {
+          "spend_threshold_usd": 100,
+          "rpm": 5000,
+          "tpm": 2000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-5": {
+          "spend_threshold_usd": 1000,
+          "rpm": 15000,
+          "tpm": 40000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "OpenAI",
+      "provider_id": "openai",
+      "model_id": "gpt-5.4-nano",
+      "model_name": "GPT-5.4 Nano",
+      "docs_url": "https://platform.openai.com/docs/guides/rate-limits",
+      "notes": "High-volume classification and routing model. Highest published throughput ceiling of any provider at Tier 5.",
+      "limits": {
+        "tier-1": {
+          "spend_threshold_usd": 5,
+          "rpm": 500,
+          "tpm": 200000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 100,
+          "rpm": 5000,
+          "tpm": 4000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-5": {
+          "spend_threshold_usd": 1000,
+          "rpm": 30000,
+          "tpm": 180000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Highest published TPM of any provider"
+        }
+      }
+    },
+    {
+      "provider": "Anthropic",
+      "provider_id": "anthropic",
+      "model_id": "claude-opus-4-8",
+      "model_name": "Claude Opus 4.8",
+      "docs_url": "https://docs.anthropic.com/en/api/rate-limits",
+      "notes": "Opus 4.8, 4.7, and 4.6 share one rate limit pool. Cached input tokens do not count toward ITPM. No free API tier; minimum entry is $5.",
+      "limits": {
+        "tier-1": {
+          "spend_threshold_usd": 5,
+          "rpm": 50,
+          "itpm": 20000,
+          "otpm": 4000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-2": {
+          "spend_threshold_usd": 40,
+          "rpm": 1000,
+          "itpm": 160000,
+          "otpm": 32000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 200,
+          "rpm": 2000,
+          "itpm": 800000,
+          "otpm": 160000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-4": {
+          "spend_threshold_usd": 400,
+          "rpm": 4000,
+          "itpm": 2000000,
+          "otpm": 400000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Anthropic",
+      "provider_id": "anthropic",
+      "model_id": "claude-sonnet-5",
+      "model_name": "Claude Sonnet 5",
+      "docs_url": "https://docs.anthropic.com/en/api/rate-limits",
+      "notes": "Sonnet 5 and Sonnet 4.6 likely share a rate limit pool (not yet formally documented). Sonnet 5 tokenizer emits ~30% more tokens per request than Sonnet 4.6 for identical prompts. Introductory pricing through August 31, 2026.",
+      "limits": {
+        "tier-1": {
+          "spend_threshold_usd": 5,
+          "rpm": 50,
+          "itpm": 30000,
+          "otpm": 8000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-2": {
+          "spend_threshold_usd": 40,
+          "rpm": 1000,
+          "itpm": 200000,
+          "otpm": 40000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 200,
+          "rpm": 2000,
+          "itpm": 800000,
+          "otpm": 160000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-4": {
+          "spend_threshold_usd": 400,
+          "rpm": 4000,
+          "itpm": 2000000,
+          "otpm": 400000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Anthropic",
+      "provider_id": "anthropic",
+      "model_id": "claude-haiku-4-5",
+      "model_name": "Claude Haiku 4.5",
+      "docs_url": "https://docs.anthropic.com/en/api/rate-limits",
+      "notes": "Highest throughput Anthropic model. Cached input tokens do not count toward ITPM.",
+      "limits": {
+        "tier-1": {
+          "spend_threshold_usd": 5,
+          "rpm": 50,
+          "itpm": 50000,
+          "otpm": 10000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-2": {
+          "spend_threshold_usd": 40,
+          "rpm": 1000,
+          "itpm": 400000,
+          "otpm": 80000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 200,
+          "rpm": 2000,
+          "itpm": 1000000,
+          "otpm": 200000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-4": {
+          "spend_threshold_usd": 400,
+          "rpm": 4000,
+          "itpm": 4000000,
+          "otpm": 800000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Google",
+      "provider_id": "google",
+      "model_id": "gemini-3-1-pro",
+      "model_name": "Gemini 3.1 Pro",
+      "docs_url": "https://ai.google.dev/gemini-api/docs/rate-limits",
+      "notes": "Google removed static rate limit tables from public docs in Q1 2026. Figures shown are last confirmed published numbers. Check AI Studio (aistudio.google.com/rate-limit) for current project limits. Gemini 3.5 Flash is now Google's current flagship but has no published limits.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 5,
+          "tpm": null,
+          "rpd": 100,
+          "tpd": null,
+          "notes": "Very conservative; not suitable as a development baseline"
+        },
+        "tier-1": {
+          "spend_threshold_usd": 0,
+          "rpm": 150,
+          "tpm": 1000000,
+          "rpd": 1000,
+          "tpd": null,
+          "notes": "Pay-as-you-go (billing enabled)"
+        },
+        "tier-2": {
+          "spend_threshold_usd": 250,
+          "rpm": 1000,
+          "tpm": 2000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Google",
+      "provider_id": "google",
+      "model_id": "gemini-3-1-flash-lite",
+      "model_name": "Gemini 3.1 Flash-Lite",
+      "docs_url": "https://ai.google.dev/gemini-api/docs/rate-limits",
+      "notes": "Highest confirmed published throughput on the free tier (250K TPM). Once billing is enabled on a project the free tier disappears entirely.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 15,
+          "tpm": 250000,
+          "rpd": 1000,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-1": {
+          "spend_threshold_usd": 0,
+          "rpm": 300,
+          "tpm": 2000000,
+          "rpd": 1500,
+          "tpd": null,
+          "notes": "Pay-as-you-go (billing enabled)"
+        },
+        "tier-2": {
+          "spend_threshold_usd": 250,
+          "rpm": 2000,
+          "tpm": 4000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Mistral",
+      "provider_id": "mistral",
+      "model_id": "mistral-api",
+      "model_name": "Mistral API (all models)",
+      "docs_url": "https://docs.mistral.ai/admin/user-management-finops/tier",
+      "notes": "Mistral uses RPS (requests per second), TPM, and tokens/month - not RPM. Actual limits are only visible after login at admin.mistral.ai/plateforme/limits. No public numerical figures. European data residency (GDPR).",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Limited rate limits for evaluation and prototyping only. Upgrade to Scale plan to increase."
+        },
+        "tier-1": {
+          "spend_threshold_usd": 0,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Scale plan (pay-as-you-go). Actual limits in admin console."
+        },
+        "tier-2": {
+          "spend_threshold_usd": 20,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Automatic upgrade. Actual limits in admin console."
+        },
+        "tier-3": {
+          "spend_threshold_usd": 100,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Automatic upgrade. Actual limits in admin console."
+        },
+        "tier-4": {
+          "spend_threshold_usd": 500,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Automatic upgrade. Contact support for higher limits."
+        }
+      }
+    },
+    {
+      "provider": "Cohere",
+      "provider_id": "cohere",
+      "model_id": "command-r-plus",
+      "model_name": "Command R+",
+      "docs_url": "https://docs.cohere.com/docs/rate-limits",
+      "notes": "Command A+ (May 2026) is the current flagship but its rate limit figures are not yet published. Command R+ figures shown as reference baseline. Trial keys: 1,000 calls/month across all endpoints.",
+      "limits": {
+        "trial": {
+          "spend_threshold_usd": 0,
+          "rpm": 20,
+          "tpm": null,
+          "rpd": 33,
+          "tpd": null,
+          "notes": "~33 RPD reflects 1,000 calls/month total across all endpoints"
+        },
+        "production": {
+          "spend_threshold_usd": null,
+          "rpm": 500,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Production API key required"
+        }
+      }
+    },
+    {
+      "provider": "Groq",
+      "provider_id": "groq",
+      "model_id": "llama-4-scout",
+      "model_name": "Llama 4 Scout (Groq)",
+      "docs_url": "https://console.groq.com/docs/rate-limits",
+      "notes": "Groq runs on custom LPU hardware. Cached tokens do not count toward TPM/TPD. Limits apply at the organization level.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 30,
+          "tpm": 30000,
+          "rpd": 1000,
+          "tpd": 500000,
+          "notes": "No credit card required"
+        },
+        "developer": {
+          "spend_threshold_usd": null,
+          "rpm": 1000,
+          "tpm": 300000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Paid plan"
+        }
+      }
+    },
+    {
+      "provider": "Groq",
+      "provider_id": "groq",
+      "model_id": "llama-4-maverick",
+      "model_name": "Llama 4 Maverick (Groq)",
+      "docs_url": "https://console.groq.com/docs/rate-limits",
+      "notes": "Maverick free tier is half the default Scout limits. Cached tokens do not count toward TPM/TPD.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 15,
+          "tpm": 3000,
+          "rpd": 500,
+          "tpd": 500000,
+          "notes": "Half the default Groq free tier limits"
+        },
+        "developer": {
+          "spend_threshold_usd": null,
+          "rpm": 1000,
+          "tpm": 250000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Paid plan"
+        }
+      }
+    },
+    {
+      "provider": "Together AI",
+      "provider_id": "together-ai",
+      "model_id": "together-ai-api",
+      "model_name": "Together AI API (all models)",
+      "docs_url": "https://docs.together.ai/docs/rate-limits",
+      "notes": "Dynamic rate limits since January 2026. No fixed tiers or published RPM/TPM. Limits grow with sustained usage and are returned in API response headers (X-RateLimit-* fields).",
+      "limits": {
+        "dynamic": {
+          "spend_threshold_usd": null,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Dynamic limits based on sustained usage. Check API response headers for current limits."
+        }
+      }
+    },
+    {
+      "provider": "Fireworks AI",
+      "provider_id": "fireworks-ai",
+      "model_id": "fireworks-ai-api",
+      "model_name": "Fireworks AI API (open models)",
+      "docs_url": "https://docs.fireworks.ai/guides/quotas_usage/rate-limits",
+      "notes": "Dynamic ceiling up to 6,000 RPM. Soft limit starts at ~1 RPS and doubles hourly. On-demand GPU deployments remove rate limits entirely. Spending tier caps: $50-$50K/month.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 10,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "No payment method required"
+        },
+        "paid": {
+          "spend_threshold_usd": null,
+          "rpm": 6000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Dynamic ceiling, not guaranteed. Soft limit starts ~1 RPS and doubles hourly."
+        }
+      }
+    },
+    {
+      "provider": "DeepSeek",
+      "provider_id": "deepseek",
+      "model_id": "deepseek-v4-flash",
+      "model_name": "DeepSeek V4 Flash",
+      "docs_url": "https://api-docs.deepseek.com/",
+      "notes": "DeepSeek does not publish fixed RPM/TPM. Limits are fully dynamic based on server load. No minimum guaranteed. Build fallback routing if DeepSeek availability is critical. V3.2 aliases deprecated July 24, 2026.",
+      "limits": {
+        "paid": {
+          "spend_threshold_usd": null,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Dynamic concurrency limits. Not published. Check API response headers."
+        }
+      }
+    },
+    {
+      "provider": "DeepSeek",
+      "provider_id": "deepseek",
+      "model_id": "deepseek-v4-pro",
+      "model_name": "DeepSeek V4 Pro",
+      "docs_url": "https://api-docs.deepseek.com/",
+      "notes": "DeepSeek does not publish fixed RPM/TPM. Limits are fully dynamic based on server load.",
+      "limits": {
+        "paid": {
+          "spend_threshold_usd": null,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Dynamic concurrency limits. Not published. Check API response headers."
+        }
+      }
+    },
+    {
+      "provider": "xAI",
+      "provider_id": "xai",
+      "model_id": "grok-4-3",
+      "model_name": "Grok 4.3",
+      "docs_url": "https://docs.x.ai/docs",
+      "notes": "xAI uses a 5-tier structure ($0/$50/$250/$1K/$5K thresholds) but numerical RPM/TPM are only visible after login in the xAI Console. No public figures.",
+      "limits": {
+        "tier-0": {
+          "spend_threshold_usd": 0,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Free tier. Limits in xAI Console."
+        },
+        "tier-1": {
+          "spend_threshold_usd": 50,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Limits in xAI Console."
+        },
+        "tier-2": {
+          "spend_threshold_usd": 250,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Limits in xAI Console."
+        },
+        "tier-3": {
+          "spend_threshold_usd": 1000,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Limits in xAI Console."
+        },
+        "tier-4": {
+          "spend_threshold_usd": 5000,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Limits in xAI Console."
+        }
+      }
+    },
+    {
+      "provider": "Perplexity",
+      "provider_id": "perplexity",
+      "model_id": "sonar",
+      "model_name": "Sonar",
+      "docs_url": "https://docs.perplexity.ai/docs/admin/rate-limits-usage-tiers",
+      "notes": "Perplexity uses 6 tiers (T0-T5) based on cumulative spend. Leaky bucket algorithm. Token prices exclude a per-request fee of $5-14/1K requests.",
+      "limits": {
+        "tier-0": {
+          "spend_threshold_usd": 0,
+          "rpm": 50,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "New account"
+        },
+        "tier-1": {
+          "spend_threshold_usd": 50,
+          "rpm": 150,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 500,
+          "rpm": 1000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Perplexity",
+      "provider_id": "perplexity",
+      "model_id": "sonar-pro",
+      "model_name": "Sonar Pro",
+      "docs_url": "https://docs.perplexity.ai/docs/admin/rate-limits-usage-tiers",
+      "notes": "Same tier structure as Sonar. Deep Research model has much lower limits (5-40 RPM).",
+      "limits": {
+        "tier-0": {
+          "spend_threshold_usd": 0,
+          "rpm": 50,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-1": {
+          "spend_threshold_usd": 50,
+          "rpm": 150,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 500,
+          "rpm": 1000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Amazon Bedrock",
+      "provider_id": "amazon-bedrock",
+      "model_id": "amazon-bedrock-api",
+      "model_name": "Amazon Bedrock API (all models)",
+      "docs_url": "https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html",
+      "notes": "Per-model, per-region quotas. No fixed tiers. Default ratio: 6 RPM per 1,000 TPM. Quotas can be increased via AWS Service Quotas console. Provisioned Throughput deployments remove rate limits entirely. Hosts Claude (Opus 4.8, Sonnet 5, Haiku 4.5), Llama 4, Mistral, and Nova models.",
+      "limits": {
+        "default": {
+          "spend_threshold_usd": null,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Per-model per-region quotas. Default ratio is 6 RPM per 1,000 TPM. Check AWS Service Quotas console for your account limits."
+        }
+      }
+    }
+  ]
+}
