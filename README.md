@@ -188,7 +188,7 @@ To trigger a manual update: Actions -> Weekly Rate Limit Update -> Run workflow.
 
 - [ ] Rate limit history chart on the live site
 - [ ] Provider comparison view: side-by-side tier diff
-- [ ] Calculator: how many requests/tokens do you need and which tier covers it
+- [x] Calculator: enter RPM/TPM/RPD requirements and see which tiers cover them
 
 ---
 
