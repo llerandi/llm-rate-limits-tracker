@@ -1,0 +1,17 @@
+{
+  "name": "llm-rate-limits-tracker",
+  "version": "1.0.0",
+  "description": "Weekly-updated LLM API rate limits from all major providers. Zero-dependency wrapper around the llm-rate-limits-tracker JSON API.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "keywords": ["llm", "rate-limits", "rpm", "tpm", "ai", "anthropic", "openai", "google", "groq"],
+  "author": "llerandi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/llerandi/llm-rate-limits-tracker.git",
+    "directory": "packages/npm"
+  },
+  "homepage": "https://llerandi.github.io/llm-rate-limits-tracker/",
+  "engines": { "node": ">=18" }
+}
