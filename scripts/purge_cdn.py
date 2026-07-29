@@ -35,8 +35,8 @@ def build_paths(data: dict) -> list[str]:
         paths.append(f"data/providers/{pid}.json")
 
     # Most recent history snapshot
-    from datetime import date
-    today = date.today().isoformat()
+    from datetime import datetime, timezone
+    today = datetime.now(tz=timezone.utc).date().isoformat()
     paths.append(f"data/history/{today}.json")
 
     return paths
