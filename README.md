@@ -94,6 +94,44 @@ for m in data["models"]:
 
 ---
 
+## Client Libraries
+
+Installable wrappers around the jsDelivr JSON API. Both are zero-dependency and read-only.
+
+### JavaScript / TypeScript (Node >= 18 and browsers)
+
+```bash
+npm install llm-rate-limits-tracker
+```
+
+```js
+const { fetchRateLimits, getModel, getProvider } = require("llm-rate-limits-tracker");
+
+const { models } = await fetchRateLimits();
+const model = await getModel("openai/gpt-5.5");
+const { models: anthropicModels } = await getProvider("anthropic");
+```
+
+Source: [`packages/npm/`](packages/npm/)
+
+### Python (>= 3.9, no dependencies)
+
+```bash
+pip install llm-rate-limits-tracker
+```
+
+```python
+from llm_rate_limits_tracker import fetch_rate_limits, get_model, get_provider
+
+data = fetch_rate_limits()
+model = get_model("openai/gpt-5.5")
+anthropic = get_provider("anthropic")
+```
+
+Source: [`packages/python/`](packages/python/)
+
+---
+
 ## Contributing
 
 If you spot stale data, open an issue or PR with the corrected values and a link to the provider's docs page.
@@ -144,7 +182,7 @@ To trigger a manual update: Actions -> Weekly Rate Limit Update -> Run workflow.
 
 - [ ] RSS/Atom feed of rate limit changes
 - [ ] Weekly summary posted to GitHub Discussions
-- [ ] npm / PyPI package wrapping the JSON endpoint
+- [x] npm / PyPI package wrapping the JSON endpoint
 
 ### Phase 6 - Insights
 
