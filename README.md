@@ -4,6 +4,8 @@
 [![License](https://img.shields.io/github/license/llerandi/llm-rate-limits-tracker)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/llerandi/llm-rate-limits-tracker?style=social)](https://github.com/llerandi/llm-rate-limits-tracker/stargazers)
 [![Last commit](https://img.shields.io/github/last-commit/llerandi/llm-rate-limits-tracker)](https://github.com/llerandi/llm-rate-limits-tracker/commits/main)
+[![Updated weekly](https://img.shields.io/badge/last--updated-2026--07--29-brightgreen)](https://github.com/llerandi/llm-rate-limits-tracker/actions/workflows/update.yaml)
+[![Python](https://img.shields.io/badge/python-3.13%2B-blue?logo=python)](https://www.python.org/)
 [![Live site](https://img.shields.io/badge/live%20site-GitHub%20Pages-0969da)](https://llerandi.github.io/llm-rate-limits-tracker/)
 
 Weekly-updated API rate limits for all major LLM providers. RPM, TPM, RPD by tier - structured as JSON so you can consume it programmatically. No API key required.
@@ -124,15 +126,31 @@ To trigger a manual update: Actions -> Weekly Rate Limit Update -> Run workflow.
 
 - [x] GitHub Pages site with provider/tier filters, sort, dark mode
 - [x] JSON API via jsDelivr CDN with CORS
-- [ ] CDN auto-purge after weekly updates
-- [ ] Embeddable badges (RPM, TPM per model/tier)
+- [x] SEO: Open Graph, JSON-LD structured data, sitemap, Twitter card
 
-### Phase 3 - Expand
+### Phase 3 - CDN and Automation
 
-- [ ] Cover more models per provider
+- [x] Auto-purge jsDelivr CDN after every weekly update
+- [ ] Embeddable badges: RPM and TPM per model/tier (shields.io endpoint)
+- [ ] Shareable URLs: query params preserve active filters
+
+### Phase 4 - Expand Coverage
+
+- [ ] More models per provider
+- [ ] Free-tier providers: Cerebras, SambaNova, Nvidia NIM
+- [ ] Per-region limits for Amazon Bedrock and Azure OpenAI
+
+### Phase 5 - Community
+
 - [ ] RSS/Atom feed of rate limit changes
-- [ ] npm / PyPI package
-- [ ] Free-tier coverage (Cerebras, Sambanova, etc.)
+- [ ] Weekly summary posted to GitHub Discussions
+- [ ] npm / PyPI package wrapping the JSON endpoint
+
+### Phase 6 - Insights
+
+- [ ] Rate limit history chart on the live site
+- [ ] Provider comparison view: side-by-side tier diff
+- [ ] Calculator: how many requests/tokens do you need and which tier covers it
 
 ---
 
