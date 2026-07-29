@@ -54,3 +54,6 @@ jobs:
           git add data/rate-limits.json data/history/ data/providers/
           git diff --staged --quiet || git commit -m "chore: weekly snapshot and provider files [skip ci]"
           git push
+
+      - name: Purge jsDelivr CDN cache
+        run: python scripts/purge_cdn.py
