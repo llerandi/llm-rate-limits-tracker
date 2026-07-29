@@ -12,6 +12,7 @@ Weekly-updated API rate limits for all major LLM providers. RPM, TPM, RPD by tie
 
 **Live site:** [llerandi.github.io/llm-rate-limits-tracker](https://llerandi.github.io/llm-rate-limits-tracker/) - filterable by provider and tier, sortable.
 
+> [!TIP]
 > Looking for token prices instead? See the sister project: [LLM Price Tracker](https://github.com/llerandi/llm-price-tracker)
 
 ---
