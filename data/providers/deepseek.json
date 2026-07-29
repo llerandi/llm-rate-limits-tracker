@@ -1,0 +1,43 @@
+{
+  "last_updated": "2026-07-29",
+  "provider": "DeepSeek",
+  "provider_id": "deepseek",
+  "models": [
+    {
+      "provider": "DeepSeek",
+      "provider_id": "deepseek",
+      "model_id": "deepseek-v4-flash",
+      "model_name": "DeepSeek V4 Flash",
+      "docs_url": "https://api-docs.deepseek.com/",
+      "notes": "DeepSeek does not publish fixed RPM/TPM. Limits are fully dynamic based on server load. No minimum guaranteed. Build fallback routing if DeepSeek availability is critical. V3.2 aliases deprecated July 24, 2026.",
+      "limits": {
+        "paid": {
+          "spend_threshold_usd": null,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Dynamic concurrency limits. Not published. Check API response headers."
+        }
+      }
+    },
+    {
+      "provider": "DeepSeek",
+      "provider_id": "deepseek",
+      "model_id": "deepseek-v4-pro",
+      "model_name": "DeepSeek V4 Pro",
+      "docs_url": "https://api-docs.deepseek.com/",
+      "notes": "DeepSeek does not publish fixed RPM/TPM. Limits are fully dynamic based on server load.",
+      "limits": {
+        "paid": {
+          "spend_threshold_usd": null,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Dynamic concurrency limits. Not published. Check API response headers."
+        }
+      }
+    }
+  ]
+}

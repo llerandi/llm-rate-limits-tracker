@@ -1,0 +1,59 @@
+{
+  "last_updated": "2026-07-29",
+  "provider": "Groq",
+  "provider_id": "groq",
+  "models": [
+    {
+      "provider": "Groq",
+      "provider_id": "groq",
+      "model_id": "llama-4-scout",
+      "model_name": "Llama 4 Scout (Groq)",
+      "docs_url": "https://console.groq.com/docs/rate-limits",
+      "notes": "Groq runs on custom LPU hardware. Cached tokens do not count toward TPM/TPD. Limits apply at the organization level.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 30,
+          "tpm": 30000,
+          "rpd": 1000,
+          "tpd": 500000,
+          "notes": "No credit card required"
+        },
+        "developer": {
+          "spend_threshold_usd": null,
+          "rpm": 1000,
+          "tpm": 300000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Paid plan"
+        }
+      }
+    },
+    {
+      "provider": "Groq",
+      "provider_id": "groq",
+      "model_id": "llama-4-maverick",
+      "model_name": "Llama 4 Maverick (Groq)",
+      "docs_url": "https://console.groq.com/docs/rate-limits",
+      "notes": "Maverick free tier is half the default Scout limits. Cached tokens do not count toward TPM/TPD.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 15,
+          "tpm": 3000,
+          "rpd": 500,
+          "tpd": 500000,
+          "notes": "Half the default Groq free tier limits"
+        },
+        "developer": {
+          "spend_threshold_usd": null,
+          "rpm": 1000,
+          "tpm": 250000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Paid plan"
+        }
+      }
+    }
+  ]
+}

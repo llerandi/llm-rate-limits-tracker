@@ -1,0 +1,25 @@
+{
+  "last_updated": "2026-07-29",
+  "provider": "Amazon Bedrock",
+  "provider_id": "amazon-bedrock",
+  "models": [
+    {
+      "provider": "Amazon Bedrock",
+      "provider_id": "amazon-bedrock",
+      "model_id": "amazon-bedrock-api",
+      "model_name": "Amazon Bedrock API (all models)",
+      "docs_url": "https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html",
+      "notes": "Per-model, per-region quotas. No fixed tiers. Default ratio: 6 RPM per 1,000 TPM. Quotas can be increased via AWS Service Quotas console. Provisioned Throughput deployments remove rate limits entirely. Hosts Claude (Opus 4.8, Sonnet 5, Haiku 4.5), Llama 4, Mistral, and Nova models.",
+      "limits": {
+        "default": {
+          "spend_threshold_usd": null,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Per-model per-region quotas. Default ratio is 6 RPM per 1,000 TPM. Check AWS Service Quotas console for your account limits."
+        }
+      }
+    }
+  ]
+}

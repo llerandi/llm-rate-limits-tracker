@@ -1,0 +1,33 @@
+{
+  "last_updated": "2026-07-29",
+  "provider": "Cohere",
+  "provider_id": "cohere",
+  "models": [
+    {
+      "provider": "Cohere",
+      "provider_id": "cohere",
+      "model_id": "command-r-plus",
+      "model_name": "Command R+",
+      "docs_url": "https://docs.cohere.com/docs/rate-limits",
+      "notes": "Command A+ (May 2026) is the current flagship but its rate limit figures are not yet published. Command R+ figures shown as reference baseline. Trial keys: 1,000 calls/month across all endpoints.",
+      "limits": {
+        "trial": {
+          "spend_threshold_usd": 0,
+          "rpm": 20,
+          "tpm": null,
+          "rpd": 33,
+          "tpd": null,
+          "notes": "~33 RPD reflects 1,000 calls/month total across all endpoints"
+        },
+        "production": {
+          "spend_threshold_usd": null,
+          "rpm": 500,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Production API key required"
+        }
+      }
+    }
+  ]
+}

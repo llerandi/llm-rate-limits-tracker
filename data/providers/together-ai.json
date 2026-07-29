@@ -1,0 +1,25 @@
+{
+  "last_updated": "2026-07-29",
+  "provider": "Together AI",
+  "provider_id": "together-ai",
+  "models": [
+    {
+      "provider": "Together AI",
+      "provider_id": "together-ai",
+      "model_id": "together-ai-api",
+      "model_name": "Together AI API (all models)",
+      "docs_url": "https://docs.together.ai/docs/rate-limits",
+      "notes": "Dynamic rate limits since January 2026. No fixed tiers or published RPM/TPM. Limits grow with sustained usage and are returned in API response headers (X-RateLimit-* fields).",
+      "limits": {
+        "dynamic": {
+          "spend_threshold_usd": null,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Dynamic limits based on sustained usage. Check API response headers for current limits."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "last_updated": "2026-07-29",
+  "provider": "Perplexity",
+  "provider_id": "perplexity",
+  "models": [
+    {
+      "provider": "Perplexity",
+      "provider_id": "perplexity",
+      "model_id": "sonar",
+      "model_name": "Sonar",
+      "docs_url": "https://docs.perplexity.ai/docs/admin/rate-limits-usage-tiers",
+      "notes": "Perplexity uses 6 tiers (T0-T5) based on cumulative spend. Leaky bucket algorithm. Token prices exclude a per-request fee of $5-14/1K requests.",
+      "limits": {
+        "tier-0": {
+          "spend_threshold_usd": 0,
+          "rpm": 50,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "New account"
+        },
+        "tier-1": {
+          "spend_threshold_usd": 50,
+          "rpm": 150,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 500,
+          "rpm": 1000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Perplexity",
+      "provider_id": "perplexity",
+      "model_id": "sonar-pro",
+      "model_name": "Sonar Pro",
+      "docs_url": "https://docs.perplexity.ai/docs/admin/rate-limits-usage-tiers",
+      "notes": "Same tier structure as Sonar. Deep Research model has much lower limits (5-40 RPM).",
+      "limits": {
+        "tier-0": {
+          "spend_threshold_usd": 0,
+          "rpm": 50,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-1": {
+          "spend_threshold_usd": 50,
+          "rpm": 150,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 500,
+          "rpm": 1000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    }
+  ]
+}

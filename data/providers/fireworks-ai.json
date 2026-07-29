@@ -1,0 +1,33 @@
+{
+  "last_updated": "2026-07-29",
+  "provider": "Fireworks AI",
+  "provider_id": "fireworks-ai",
+  "models": [
+    {
+      "provider": "Fireworks AI",
+      "provider_id": "fireworks-ai",
+      "model_id": "fireworks-ai-api",
+      "model_name": "Fireworks AI API (open models)",
+      "docs_url": "https://docs.fireworks.ai/guides/quotas_usage/rate-limits",
+      "notes": "Dynamic ceiling up to 6,000 RPM. Soft limit starts at ~1 RPS and doubles hourly. On-demand GPU deployments remove rate limits entirely. Spending tier caps: $50-$50K/month.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 10,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "No payment method required"
+        },
+        "paid": {
+          "spend_threshold_usd": null,
+          "rpm": 6000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Dynamic ceiling, not guaranteed. Soft limit starts ~1 RPS and doubles hourly."
+        }
+      }
+    }
+  ]
+}

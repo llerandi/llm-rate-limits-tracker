@@ -1,0 +1,157 @@
+{
+  "last_updated": "2026-07-29",
+  "provider": "Anthropic",
+  "provider_id": "anthropic",
+  "models": [
+    {
+      "provider": "Anthropic",
+      "provider_id": "anthropic",
+      "model_id": "claude-opus-4-8",
+      "model_name": "Claude Opus 4.8",
+      "docs_url": "https://docs.anthropic.com/en/api/rate-limits",
+      "notes": "Opus 4.8, 4.7, and 4.6 share one rate limit pool. Cached input tokens do not count toward ITPM. No free API tier; minimum entry is $5.",
+      "limits": {
+        "tier-1": {
+          "spend_threshold_usd": 5,
+          "rpm": 50,
+          "itpm": 20000,
+          "otpm": 4000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-2": {
+          "spend_threshold_usd": 40,
+          "rpm": 1000,
+          "itpm": 160000,
+          "otpm": 32000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 200,
+          "rpm": 2000,
+          "itpm": 800000,
+          "otpm": 160000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-4": {
+          "spend_threshold_usd": 400,
+          "rpm": 4000,
+          "itpm": 2000000,
+          "otpm": 400000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Anthropic",
+      "provider_id": "anthropic",
+      "model_id": "claude-sonnet-5",
+      "model_name": "Claude Sonnet 5",
+      "docs_url": "https://docs.anthropic.com/en/api/rate-limits",
+      "notes": "Sonnet 5 and Sonnet 4.6 likely share a rate limit pool (not yet formally documented). Sonnet 5 tokenizer emits ~30% more tokens per request than Sonnet 4.6 for identical prompts. Introductory pricing through August 31, 2026.",
+      "limits": {
+        "tier-1": {
+          "spend_threshold_usd": 5,
+          "rpm": 50,
+          "itpm": 30000,
+          "otpm": 8000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-2": {
+          "spend_threshold_usd": 40,
+          "rpm": 1000,
+          "itpm": 200000,
+          "otpm": 40000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 200,
+          "rpm": 2000,
+          "itpm": 800000,
+          "otpm": 160000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-4": {
+          "spend_threshold_usd": 400,
+          "rpm": 4000,
+          "itpm": 2000000,
+          "otpm": 400000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Anthropic",
+      "provider_id": "anthropic",
+      "model_id": "claude-haiku-4-5",
+      "model_name": "Claude Haiku 4.5",
+      "docs_url": "https://docs.anthropic.com/en/api/rate-limits",
+      "notes": "Highest throughput Anthropic model. Cached input tokens do not count toward ITPM.",
+      "limits": {
+        "tier-1": {
+          "spend_threshold_usd": 5,
+          "rpm": 50,
+          "itpm": 50000,
+          "otpm": 10000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-2": {
+          "spend_threshold_usd": 40,
+          "rpm": 1000,
+          "itpm": 400000,
+          "otpm": 80000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 200,
+          "rpm": 2000,
+          "itpm": 1000000,
+          "otpm": 200000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-4": {
+          "spend_threshold_usd": 400,
+          "rpm": 4000,
+          "itpm": 4000000,
+          "otpm": 800000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    }
+  ]
+}

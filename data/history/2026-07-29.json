@@ -1,0 +1,605 @@
+{
+  "date": "2026-07-29",
+  "models": [
+    {
+      "provider": "OpenAI",
+      "provider_id": "openai",
+      "model_id": "gpt-5.5",
+      "model_name": "GPT-5.5",
+      "limits": {
+        "tier-1": {
+          "spend_threshold_usd": 5,
+          "rpm": 500,
+          "tpm": 500000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-2": {
+          "spend_threshold_usd": 50,
+          "rpm": 5000,
+          "tpm": 800000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "7+ days since first successful payment required"
+        },
+        "tier-3": {
+          "spend_threshold_usd": 100,
+          "rpm": 5000,
+          "tpm": 2000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-5": {
+          "spend_threshold_usd": 1000,
+          "rpm": 15000,
+          "tpm": 40000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "OpenAI",
+      "provider_id": "openai",
+      "model_id": "gpt-5.4-nano",
+      "model_name": "GPT-5.4 Nano",
+      "limits": {
+        "tier-1": {
+          "spend_threshold_usd": 5,
+          "rpm": 500,
+          "tpm": 200000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 100,
+          "rpm": 5000,
+          "tpm": 4000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-5": {
+          "spend_threshold_usd": 1000,
+          "rpm": 30000,
+          "tpm": 180000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Highest published TPM of any provider"
+        }
+      }
+    },
+    {
+      "provider": "Anthropic",
+      "provider_id": "anthropic",
+      "model_id": "claude-opus-4-8",
+      "model_name": "Claude Opus 4.8",
+      "limits": {
+        "tier-1": {
+          "spend_threshold_usd": 5,
+          "rpm": 50,
+          "itpm": 20000,
+          "otpm": 4000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-2": {
+          "spend_threshold_usd": 40,
+          "rpm": 1000,
+          "itpm": 160000,
+          "otpm": 32000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 200,
+          "rpm": 2000,
+          "itpm": 800000,
+          "otpm": 160000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-4": {
+          "spend_threshold_usd": 400,
+          "rpm": 4000,
+          "itpm": 2000000,
+          "otpm": 400000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Anthropic",
+      "provider_id": "anthropic",
+      "model_id": "claude-sonnet-5",
+      "model_name": "Claude Sonnet 5",
+      "limits": {
+        "tier-1": {
+          "spend_threshold_usd": 5,
+          "rpm": 50,
+          "itpm": 30000,
+          "otpm": 8000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-2": {
+          "spend_threshold_usd": 40,
+          "rpm": 1000,
+          "itpm": 200000,
+          "otpm": 40000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 200,
+          "rpm": 2000,
+          "itpm": 800000,
+          "otpm": 160000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-4": {
+          "spend_threshold_usd": 400,
+          "rpm": 4000,
+          "itpm": 2000000,
+          "otpm": 400000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Anthropic",
+      "provider_id": "anthropic",
+      "model_id": "claude-haiku-4-5",
+      "model_name": "Claude Haiku 4.5",
+      "limits": {
+        "tier-1": {
+          "spend_threshold_usd": 5,
+          "rpm": 50,
+          "itpm": 50000,
+          "otpm": 10000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-2": {
+          "spend_threshold_usd": 40,
+          "rpm": 1000,
+          "itpm": 400000,
+          "otpm": 80000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 200,
+          "rpm": 2000,
+          "itpm": 1000000,
+          "otpm": 200000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-4": {
+          "spend_threshold_usd": 400,
+          "rpm": 4000,
+          "itpm": 4000000,
+          "otpm": 800000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Google",
+      "provider_id": "google",
+      "model_id": "gemini-3-1-pro",
+      "model_name": "Gemini 3.1 Pro",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 5,
+          "tpm": null,
+          "rpd": 100,
+          "tpd": null,
+          "notes": "Very conservative; not suitable as a development baseline"
+        },
+        "tier-1": {
+          "spend_threshold_usd": 0,
+          "rpm": 150,
+          "tpm": 1000000,
+          "rpd": 1000,
+          "tpd": null,
+          "notes": "Pay-as-you-go (billing enabled)"
+        },
+        "tier-2": {
+          "spend_threshold_usd": 250,
+          "rpm": 1000,
+          "tpm": 2000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Google",
+      "provider_id": "google",
+      "model_id": "gemini-3-1-flash-lite",
+      "model_name": "Gemini 3.1 Flash-Lite",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 15,
+          "tpm": 250000,
+          "rpd": 1000,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-1": {
+          "spend_threshold_usd": 0,
+          "rpm": 300,
+          "tpm": 2000000,
+          "rpd": 1500,
+          "tpd": null,
+          "notes": "Pay-as-you-go (billing enabled)"
+        },
+        "tier-2": {
+          "spend_threshold_usd": 250,
+          "rpm": 2000,
+          "tpm": 4000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Mistral",
+      "provider_id": "mistral",
+      "model_id": "mistral-api",
+      "model_name": "Mistral API (all models)",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Limited rate limits for evaluation and prototyping only. Upgrade to Scale plan to increase."
+        },
+        "tier-1": {
+          "spend_threshold_usd": 0,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Scale plan (pay-as-you-go). Actual limits in admin console."
+        },
+        "tier-2": {
+          "spend_threshold_usd": 20,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Automatic upgrade. Actual limits in admin console."
+        },
+        "tier-3": {
+          "spend_threshold_usd": 100,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Automatic upgrade. Actual limits in admin console."
+        },
+        "tier-4": {
+          "spend_threshold_usd": 500,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Automatic upgrade. Contact support for higher limits."
+        }
+      }
+    },
+    {
+      "provider": "Cohere",
+      "provider_id": "cohere",
+      "model_id": "command-r-plus",
+      "model_name": "Command R+",
+      "limits": {
+        "trial": {
+          "spend_threshold_usd": 0,
+          "rpm": 20,
+          "tpm": null,
+          "rpd": 33,
+          "tpd": null,
+          "notes": "~33 RPD reflects 1,000 calls/month total across all endpoints"
+        },
+        "production": {
+          "spend_threshold_usd": null,
+          "rpm": 500,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Production API key required"
+        }
+      }
+    },
+    {
+      "provider": "Groq",
+      "provider_id": "groq",
+      "model_id": "llama-4-scout",
+      "model_name": "Llama 4 Scout (Groq)",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 30,
+          "tpm": 30000,
+          "rpd": 1000,
+          "tpd": 500000,
+          "notes": "No credit card required"
+        },
+        "developer": {
+          "spend_threshold_usd": null,
+          "rpm": 1000,
+          "tpm": 300000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Paid plan"
+        }
+      }
+    },
+    {
+      "provider": "Groq",
+      "provider_id": "groq",
+      "model_id": "llama-4-maverick",
+      "model_name": "Llama 4 Maverick (Groq)",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 15,
+          "tpm": 3000,
+          "rpd": 500,
+          "tpd": 500000,
+          "notes": "Half the default Groq free tier limits"
+        },
+        "developer": {
+          "spend_threshold_usd": null,
+          "rpm": 1000,
+          "tpm": 250000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Paid plan"
+        }
+      }
+    },
+    {
+      "provider": "Together AI",
+      "provider_id": "together-ai",
+      "model_id": "together-ai-api",
+      "model_name": "Together AI API (all models)",
+      "limits": {
+        "dynamic": {
+          "spend_threshold_usd": null,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Dynamic limits based on sustained usage. Check API response headers for current limits."
+        }
+      }
+    },
+    {
+      "provider": "Fireworks AI",
+      "provider_id": "fireworks-ai",
+      "model_id": "fireworks-ai-api",
+      "model_name": "Fireworks AI API (open models)",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 10,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "No payment method required"
+        },
+        "paid": {
+          "spend_threshold_usd": null,
+          "rpm": 6000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Dynamic ceiling, not guaranteed. Soft limit starts ~1 RPS and doubles hourly."
+        }
+      }
+    },
+    {
+      "provider": "DeepSeek",
+      "provider_id": "deepseek",
+      "model_id": "deepseek-v4-flash",
+      "model_name": "DeepSeek V4 Flash",
+      "limits": {
+        "paid": {
+          "spend_threshold_usd": null,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Dynamic concurrency limits. Not published. Check API response headers."
+        }
+      }
+    },
+    {
+      "provider": "DeepSeek",
+      "provider_id": "deepseek",
+      "model_id": "deepseek-v4-pro",
+      "model_name": "DeepSeek V4 Pro",
+      "limits": {
+        "paid": {
+          "spend_threshold_usd": null,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Dynamic concurrency limits. Not published. Check API response headers."
+        }
+      }
+    },
+    {
+      "provider": "xAI",
+      "provider_id": "xai",
+      "model_id": "grok-4-3",
+      "model_name": "Grok 4.3",
+      "limits": {
+        "tier-0": {
+          "spend_threshold_usd": 0,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Free tier. Limits in xAI Console."
+        },
+        "tier-1": {
+          "spend_threshold_usd": 50,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Limits in xAI Console."
+        },
+        "tier-2": {
+          "spend_threshold_usd": 250,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Limits in xAI Console."
+        },
+        "tier-3": {
+          "spend_threshold_usd": 1000,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Limits in xAI Console."
+        },
+        "tier-4": {
+          "spend_threshold_usd": 5000,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Limits in xAI Console."
+        }
+      }
+    },
+    {
+      "provider": "Perplexity",
+      "provider_id": "perplexity",
+      "model_id": "sonar",
+      "model_name": "Sonar",
+      "limits": {
+        "tier-0": {
+          "spend_threshold_usd": 0,
+          "rpm": 50,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "New account"
+        },
+        "tier-1": {
+          "spend_threshold_usd": 50,
+          "rpm": 150,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 500,
+          "rpm": 1000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Perplexity",
+      "provider_id": "perplexity",
+      "model_id": "sonar-pro",
+      "model_name": "Sonar Pro",
+      "limits": {
+        "tier-0": {
+          "spend_threshold_usd": 0,
+          "rpm": 50,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-1": {
+          "spend_threshold_usd": 50,
+          "rpm": 150,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 500,
+          "rpm": 1000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Amazon Bedrock",
+      "provider_id": "amazon-bedrock",
+      "model_id": "amazon-bedrock-api",
+      "model_name": "Amazon Bedrock API (all models)",
+      "limits": {
+        "default": {
+          "spend_threshold_usd": null,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Per-model per-region quotas. Default ratio is 6 RPM per 1,000 TPM. Check AWS Service Quotas console for your account limits."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "last_updated": "2026-07-29",
+  "provider": "xAI",
+  "provider_id": "xai",
+  "models": [
+    {
+      "provider": "xAI",
+      "provider_id": "xai",
+      "model_id": "grok-4-3",
+      "model_name": "Grok 4.3",
+      "docs_url": "https://docs.x.ai/docs",
+      "notes": "xAI uses a 5-tier structure ($0/$50/$250/$1K/$5K thresholds) but numerical RPM/TPM are only visible after login in the xAI Console. No public figures.",
+      "limits": {
+        "tier-0": {
+          "spend_threshold_usd": 0,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Free tier. Limits in xAI Console."
+        },
+        "tier-1": {
+          "spend_threshold_usd": 50,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Limits in xAI Console."
+        },
+        "tier-2": {
+          "spend_threshold_usd": 250,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Limits in xAI Console."
+        },
+        "tier-3": {
+          "spend_threshold_usd": 1000,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Limits in xAI Console."
+        },
+        "tier-4": {
+          "spend_threshold_usd": 5000,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Limits in xAI Console."
+        }
+      }
+    }
+  ]
+}

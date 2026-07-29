@@ -1,0 +1,57 @@
+{
+  "last_updated": "2026-07-29",
+  "provider": "Mistral",
+  "provider_id": "mistral",
+  "models": [
+    {
+      "provider": "Mistral",
+      "provider_id": "mistral",
+      "model_id": "mistral-api",
+      "model_name": "Mistral API (all models)",
+      "docs_url": "https://docs.mistral.ai/admin/user-management-finops/tier",
+      "notes": "Mistral uses RPS (requests per second), TPM, and tokens/month - not RPM. Actual limits are only visible after login at admin.mistral.ai/plateforme/limits. No public numerical figures. European data residency (GDPR).",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Limited rate limits for evaluation and prototyping only. Upgrade to Scale plan to increase."
+        },
+        "tier-1": {
+          "spend_threshold_usd": 0,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Scale plan (pay-as-you-go). Actual limits in admin console."
+        },
+        "tier-2": {
+          "spend_threshold_usd": 20,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Automatic upgrade. Actual limits in admin console."
+        },
+        "tier-3": {
+          "spend_threshold_usd": 100,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Automatic upgrade. Actual limits in admin console."
+        },
+        "tier-4": {
+          "spend_threshold_usd": 500,
+          "rpm": null,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Automatic upgrade. Contact support for higher limits."
+        }
+      }
+    }
+  ]
+}

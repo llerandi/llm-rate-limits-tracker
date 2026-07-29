@@ -1,0 +1,83 @@
+{
+  "last_updated": "2026-07-29",
+  "provider": "OpenAI",
+  "provider_id": "openai",
+  "models": [
+    {
+      "provider": "OpenAI",
+      "provider_id": "openai",
+      "model_id": "gpt-5.5",
+      "model_name": "GPT-5.5",
+      "docs_url": "https://platform.openai.com/docs/guides/rate-limits",
+      "notes": "GPT-5.5 and GPT-5.4 share identical rate limit profiles across all tiers. No free API tier for GPT-5.x models.",
+      "limits": {
+        "tier-1": {
+          "spend_threshold_usd": 5,
+          "rpm": 500,
+          "tpm": 500000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-2": {
+          "spend_threshold_usd": 50,
+          "rpm": 5000,
+          "tpm": 800000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "7+ days since first successful payment required"
+        },
+        "tier-3": {
+          "spend_threshold_usd": 100,
+          "rpm": 5000,
+          "tpm": 2000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-5": {
+          "spend_threshold_usd": 1000,
+          "rpm": 15000,
+          "tpm": 40000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "OpenAI",
+      "provider_id": "openai",
+      "model_id": "gpt-5.4-nano",
+      "model_name": "GPT-5.4 Nano",
+      "docs_url": "https://platform.openai.com/docs/guides/rate-limits",
+      "notes": "High-volume classification and routing model. Highest published throughput ceiling of any provider at Tier 5.",
+      "limits": {
+        "tier-1": {
+          "spend_threshold_usd": 5,
+          "rpm": 500,
+          "tpm": 200000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 100,
+          "rpm": 5000,
+          "tpm": 4000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-5": {
+          "spend_threshold_usd": 1000,
+          "rpm": 30000,
+          "tpm": 180000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Highest published TPM of any provider"
+        }
+      }
+    }
+  ]
+}

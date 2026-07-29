@@ -1,0 +1,75 @@
+{
+  "last_updated": "2026-07-29",
+  "provider": "Google",
+  "provider_id": "google",
+  "models": [
+    {
+      "provider": "Google",
+      "provider_id": "google",
+      "model_id": "gemini-3-1-pro",
+      "model_name": "Gemini 3.1 Pro",
+      "docs_url": "https://ai.google.dev/gemini-api/docs/rate-limits",
+      "notes": "Google removed static rate limit tables from public docs in Q1 2026. Figures shown are last confirmed published numbers. Check AI Studio (aistudio.google.com/rate-limit) for current project limits. Gemini 3.5 Flash is now Google's current flagship but has no published limits.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 5,
+          "tpm": null,
+          "rpd": 100,
+          "tpd": null,
+          "notes": "Very conservative; not suitable as a development baseline"
+        },
+        "tier-1": {
+          "spend_threshold_usd": 0,
+          "rpm": 150,
+          "tpm": 1000000,
+          "rpd": 1000,
+          "tpd": null,
+          "notes": "Pay-as-you-go (billing enabled)"
+        },
+        "tier-2": {
+          "spend_threshold_usd": 250,
+          "rpm": 1000,
+          "tpm": 2000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Google",
+      "provider_id": "google",
+      "model_id": "gemini-3-1-flash-lite",
+      "model_name": "Gemini 3.1 Flash-Lite",
+      "docs_url": "https://ai.google.dev/gemini-api/docs/rate-limits",
+      "notes": "Highest confirmed published throughput on the free tier (250K TPM). Once billing is enabled on a project the free tier disappears entirely.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 15,
+          "tpm": 250000,
+          "rpd": 1000,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-1": {
+          "spend_threshold_usd": 0,
+          "rpm": 300,
+          "tpm": 2000000,
+          "rpd": 1500,
+          "tpd": null,
+          "notes": "Pay-as-you-go (billing enabled)"
+        },
+        "tier-2": {
+          "spend_threshold_usd": 250,
+          "rpm": 2000,
+          "tpm": 4000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    }
+  ]
+}
