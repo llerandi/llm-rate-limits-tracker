@@ -24,6 +24,7 @@ CDN_BASE = "https://purge.jsdelivr.net/gh/llerandi/llm-rate-limits-tracker@main"
 # Files that are always regenerated each run
 STATIC_PATHS = [
     "data/rate-limits.json",
+    "data/feed.xml",
 ]
 
 
