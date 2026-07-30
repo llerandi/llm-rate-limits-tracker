@@ -197,7 +197,7 @@ To trigger a manual update: Actions -> Weekly Rate Limit Update -> Run workflow.
 ### Phase 5 - Community
 
 - [ ] RSS/Atom feed of rate limit changes
-- [ ] Weekly summary posted to GitHub Discussions
+- [x] Weekly summary posted to GitHub Discussions
 - [x] npm / PyPI package wrapping the JSON endpoint
 
 ### Phase 6 - Insights
