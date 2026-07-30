@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>LLM Rate Limits Tracker - Changes</title>
+  <subtitle>Weekly diffs of API rate limits across major LLM providers</subtitle>
+  <id>https://github.com/llerandi/llm-rate-limits-tracker/</id>
+  <updated>2026-07-30T00:00:00Z</updated>
+  <link href="https://llerandi.github.io/llm-rate-limits-tracker/" rel="alternate" type="text/html" />
+  <link href="https://cdn.jsdelivr.net/gh/llerandi/llm-rate-limits-tracker@main/data/feed.xml" rel="self" type="application/atom+xml" />
+  <author>
+    <name>LLM Rate Limits Tracker</name>
+    <uri>https://github.com/llerandi/llm-rate-limits-tracker</uri>
+  </author>
+</feed>

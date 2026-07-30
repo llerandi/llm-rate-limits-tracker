@@ -52,6 +52,7 @@ Static JSON served via jsDelivr CDN. CORS enabled, no auth.
 | `/data/providers/{provider_id}.json` | Single provider (e.g. `anthropic`, `openai`, `groq`) |
 | `/data/history/YYYY-MM-DD.json` | Weekly snapshot |
 | `/data/badges/{provider_id}/{model_id}/{tier}/rpm.json` | shields.io endpoint badge (also `tpm`, `rpd`) |
+| [`/data/feed.xml`](https://cdn.jsdelivr.net/gh/llerandi/llm-rate-limits-tracker@main/data/feed.xml) | Atom feed of weekly rate limit changes |
 
 ### Embeddable badges
 
@@ -196,7 +197,7 @@ To trigger a manual update: Actions -> Weekly Rate Limit Update -> Run workflow.
 
 ### Phase 5 - Community
 
-- [ ] RSS/Atom feed of rate limit changes
+- [x] RSS/Atom feed of rate limit changes
 - [x] Weekly summary posted to GitHub Discussions
 - [x] npm / PyPI package wrapping the JSON endpoint
 
