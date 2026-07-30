@@ -629,7 +629,7 @@
       "model_id": "amazon-bedrock-api",
       "model_name": "Amazon Bedrock API (all models)",
       "docs_url": "https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html",
-      "notes": "Per-model, per-region quotas. No fixed tiers. Default ratio: 6 RPM per 1,000 TPM. Quotas can be increased via AWS Service Quotas console. Provisioned Throughput deployments remove rate limits entirely. Hosts Claude (Opus 4.8, Sonnet 5, Haiku 4.5), Llama 4, Mistral, and Nova models.",
+      "notes": "Per-model, per-region TPM quotas. Amazon Bedrock no longer enforces RPM limits on the bedrock-runtime endpoint - throttling is token-based only (input + output combined). Default quotas vary by model and region and are visible in the AWS Service Quotas console (select Amazon Bedrock). Provisioned Throughput removes rate limits entirely. Hosts Claude, Llama 4, Mistral, and Amazon Nova models.",
       "limits": {
         "default": {
           "spend_threshold_usd": null,
@@ -637,7 +637,7 @@
           "tpm": null,
           "rpd": null,
           "tpd": null,
-          "notes": "Per-model per-region quotas. Default ratio is 6 RPM per 1,000 TPM. Check AWS Service Quotas console for your account limits."
+          "notes": "No RPM limit enforced. TPM quotas are per-model, per-region, per-account. Check AWS Service Quotas console under Amazon Bedrock for your account's current limits."
         }
       }
     },
@@ -854,6 +854,136 @@
           "rpd": null,
           "tpd": null,
           "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Azure OpenAI",
+      "provider_id": "azure-openai",
+      "model_id": "azure-gpt-5-1",
+      "model_name": "GPT-5.1",
+      "docs_url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/quotas-limits",
+      "notes": "Azure OpenAI uses subscription-level quota pools (not per-deployment) since May 2026. Global Standard shares one pool across all Azure regions. Data Zone Standard splits into US and EU pools. Tiers auto-upgrade (Free -> Tier 1 -> Tier 6) based on usage and account relationship. Values shown are Tier 1 defaults.",
+      "limits": {
+        "global-standard": {
+          "spend_threshold_usd": null,
+          "rpm": 10000,
+          "tpm": 1000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Single pool shared across all Azure regions. Tier 1 default."
+        },
+        "data-zone-standard": {
+          "spend_threshold_usd": null,
+          "rpm": 3000,
+          "tpm": 300000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "One pool per data zone (US zone, EU zone). Tier 1 default."
+        }
+      }
+    },
+    {
+      "provider": "Azure OpenAI",
+      "provider_id": "azure-openai",
+      "model_id": "azure-gpt-5-4",
+      "model_name": "GPT-5.4",
+      "docs_url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/quotas-limits",
+      "notes": "Azure OpenAI uses subscription-level quota pools since May 2026. Values shown are Tier 1 defaults.",
+      "limits": {
+        "global-standard": {
+          "spend_threshold_usd": null,
+          "rpm": 10000,
+          "tpm": 1000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Single pool shared across all Azure regions. Tier 1 default."
+        },
+        "data-zone-standard": {
+          "spend_threshold_usd": null,
+          "rpm": 300,
+          "tpm": 300000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "One pool per data zone (US zone, EU zone). Tier 1 default."
+        }
+      }
+    },
+    {
+      "provider": "Azure OpenAI",
+      "provider_id": "azure-openai",
+      "model_id": "azure-gpt-5-4-nano",
+      "model_name": "GPT-5.4 Nano",
+      "docs_url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/quotas-limits",
+      "notes": "Azure OpenAI uses subscription-level quota pools since May 2026. Values shown are Tier 1 defaults.",
+      "limits": {
+        "global-standard": {
+          "spend_threshold_usd": null,
+          "rpm": 5000,
+          "tpm": 5000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Single pool shared across all Azure regions. Tier 1 default."
+        },
+        "data-zone-standard": {
+          "spend_threshold_usd": null,
+          "rpm": 2000,
+          "tpm": 2000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "One pool per data zone (US zone, EU zone). Tier 1 default."
+        }
+      }
+    },
+    {
+      "provider": "Azure OpenAI",
+      "provider_id": "azure-openai",
+      "model_id": "azure-o3",
+      "model_name": "o3",
+      "docs_url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/quotas-limits",
+      "notes": "Azure OpenAI uses subscription-level quota pools since May 2026. Values shown are Tier 1 defaults.",
+      "limits": {
+        "global-standard": {
+          "spend_threshold_usd": null,
+          "rpm": 1000,
+          "tpm": 1000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Single pool shared across all Azure regions. Tier 1 default."
+        },
+        "data-zone-standard": {
+          "spend_threshold_usd": null,
+          "rpm": 300,
+          "tpm": 300000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "One pool per data zone (US zone, EU zone). Tier 1 default."
+        }
+      }
+    },
+    {
+      "provider": "Azure OpenAI",
+      "provider_id": "azure-openai",
+      "model_id": "azure-o4-mini",
+      "model_name": "o4-mini",
+      "docs_url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/quotas-limits",
+      "notes": "Azure OpenAI uses subscription-level quota pools since May 2026. Values shown are Tier 1 defaults. Note: a 300 RPM burst window applies per 10-second interval.",
+      "limits": {
+        "global-standard": {
+          "spend_threshold_usd": null,
+          "rpm": 1000,
+          "tpm": 1000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Single pool shared across all Azure regions. Tier 1 default."
+        },
+        "data-zone-standard": {
+          "spend_threshold_usd": null,
+          "rpm": 300,
+          "tpm": 300000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "One pool per data zone (US zone, EU zone). Tier 1 default. 300 RPM burst window per 10-second interval."
         }
       }
     }
