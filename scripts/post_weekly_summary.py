@@ -142,9 +142,11 @@ def build_body(data: dict, old: dict[str, dict] | None, new: dict[str, dict], to
     lines += [
         "",
         "---",
-        f"_Posted automatically every Monday after the weekly data update. "
-        f"[Subscribe via Atom feed]({CDN_BASE}/data/feed.xml) or "
-        f"[watch the repo]({REPO_URL}) for change alerts._",
+        (
+            f"_Posted automatically every Monday after the weekly data update. "
+            f"[Subscribe via Atom feed]({CDN_BASE}/data/feed.xml) or "
+            f"[watch the repo]({REPO_URL}) for change alerts._"
+        ),
     ]
 
     return "\n".join(lines)
