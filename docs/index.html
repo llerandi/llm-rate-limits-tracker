@@ -413,6 +413,34 @@
   let searchText = "";
   let hideUnpublished = false;
 
+  function syncUrl() {
+    const params = new URLSearchParams();
+    if (activeProvider) params.set("provider", activeProvider);
+    if (activeTier) params.set("tier", activeTier);
+    if (searchText) params.set("search", searchText);
+    if (sortCol !== "provider") params.set("sort", sortCol);
+    if (sortDir !== 1) params.set("dir", "desc");
+    if (hideUnpublished) params.set("hide", "1");
+    const qs = params.toString();
+    history.replaceState(null, "", qs ? "?" + qs : location.pathname);
+  }
+
+  function applyUrlParams() {
+    const params = new URLSearchParams(location.search);
+    if (params.has("provider")) activeProvider = params.get("provider");
+    if (params.has("tier")) activeTier = params.get("tier");
+    if (params.has("search")) {
+      searchText = params.get("search");
+      document.getElementById("search").value = searchText;
+    }
+    if (params.has("sort")) sortCol = params.get("sort");
+    if (params.get("dir") === "desc") sortDir = -1;
+    if (params.has("hide")) {
+      hideUnpublished = true;
+      document.getElementById("hide-unpublished").checked = true;
+    }
+  }
+
   async function init() {
     try {
       const res = await fetch(CDN_URL);
@@ -462,12 +490,13 @@
     const container = document.getElementById("provider-pills");
     [null, ...providers].forEach(p => {
       const btn = document.createElement("button");
-      btn.className = "pill" + (p === null ? " active" : "");
+      btn.className = "pill" + (p === activeProvider ? " active" : "");
       btn.textContent = p === null ? "All" : p;
       btn.addEventListener("click", () => {
         container.querySelectorAll(".pill").forEach(el => el.classList.remove("active"));
         btn.classList.add("active");
         activeProvider = p;
+        syncUrl();
         render();
       });
       container.appendChild(btn);
@@ -479,12 +508,13 @@
     const container = document.getElementById("tier-pills");
     [null, ...tiers].forEach(t => {
       const btn = document.createElement("button");
-      btn.className = "pill" + (t === null ? " active" : "");
+      btn.className = "pill" + (t === activeTier ? " active" : "");
       btn.textContent = t === null ? "All" : t;
       btn.addEventListener("click", () => {
         container.querySelectorAll(".pill").forEach(el => el.classList.remove("active"));
         btn.classList.add("active");
         activeTier = t;
+        syncUrl();
         render();
       });
       container.appendChild(btn);
@@ -573,17 +603,20 @@
     th.addEventListener("click", () => {
       if (sortCol === th.dataset.col) sortDir *= -1;
       else { sortCol = th.dataset.col; sortDir = 1; }
+      syncUrl();
       render();
     });
   });
 
   document.getElementById("search").addEventListener("input", e => {
     searchText = e.target.value.trim();
+    syncUrl();
     render();
   });
 
   document.getElementById("hide-unpublished").addEventListener("change", e => {
     hideUnpublished = e.target.checked;
+    syncUrl();
     render();
   });
 
@@ -712,6 +745,7 @@
     });
   })();
 
+  applyUrlParams();
   init();
 </script>
 </body>

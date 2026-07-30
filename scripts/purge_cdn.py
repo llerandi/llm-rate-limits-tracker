@@ -10,6 +10,7 @@ Uses urllib (stdlib) and ThreadPoolExecutor for parallel requests.
 from __future__ import annotations
 
 import json
+import re
 import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -26,6 +27,10 @@ STATIC_PATHS = [
 ]
 
 
+def _slugify(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+
+
 def build_paths(data: dict) -> list[str]:
     paths = list(STATIC_PATHS)
 
@@ -38,6 +43,15 @@ def build_paths(data: dict) -> list[str]:
     from datetime import datetime, timezone
     today = datetime.now(tz=timezone.utc).date().isoformat()
     paths.append(f"data/history/{today}.json")
+
+    # Badge files
+    for m in data["models"]:
+        pid = m["provider_id"]
+        mid = m["model_id"]
+        for tier_name in m["limits"]:
+            tier_slug = _slugify(tier_name)
+            for metric in ("rpm", "tpm", "rpd"):
+                paths.append(f"data/badges/{pid}/{mid}/{tier_slug}/{metric}.json")
 
     return paths
 
