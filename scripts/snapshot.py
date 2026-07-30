@@ -15,6 +15,17 @@ DATA_FILE = ROOT / "data" / "rate-limits.json"
 HISTORY_DIR = ROOT / "data" / "history"
 
 
+def update_index(history_dir: Path) -> None:
+    """Rebuild data/history/index.json from the files present on disk."""
+    dates = sorted(p.stem for p in history_dir.glob("*.json") if p.stem != "index")
+    index_file = history_dir / "index.json"
+    index_file.write_text(
+        json.dumps(dates, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    print(f"index.json updated: {len(dates)} snapshot(s)")
+
+
 def main() -> None:
     HISTORY_DIR.mkdir(parents=True, exist_ok=True)
     today = datetime.now(tz=timezone.utc).date().isoformat()
@@ -40,6 +51,7 @@ def main() -> None:
         encoding="utf-8",
     )
     print(f"Snapshot written: {out.name} ({len(snapshot['models'])} models)")
+    update_index(HISTORY_DIR)
 
 
 if __name__ == "__main__":
