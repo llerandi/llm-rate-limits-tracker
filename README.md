@@ -47,6 +47,17 @@ Static JSON served via jsDelivr CDN. CORS enabled, no auth.
 | [`/data/rate-limits.json`](https://cdn.jsdelivr.net/gh/llerandi/llm-rate-limits-tracker@main/data/rate-limits.json) | All providers and models |
 | `/data/providers/{provider_id}.json` | Single provider (e.g. `anthropic`, `openai`, `groq`) |
 | `/data/history/YYYY-MM-DD.json` | Weekly snapshot |
+| `/data/badges/{provider_id}/{model_id}/{tier}/rpm.json` | shields.io endpoint badge (also `tpm`, `rpd`) |
+
+### Embeddable badges
+
+Use any badge file as a [shields.io endpoint](https://shields.io/badges/endpoint-badge):
+
+```
+https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/llerandi/llm-rate-limits-tracker@main/data/badges/openai/gpt-5.5/tier-1/rpm.json
+```
+
+Replace `openai`, `gpt-5.5`, `tier-1`, and `rpm` with your target provider, model, tier, and metric (`rpm`, `tpm`, or `rpd`). Badge values update weekly.
 
 **Base URL:** `https://cdn.jsdelivr.net/gh/llerandi/llm-rate-limits-tracker@main`
 
@@ -170,8 +181,8 @@ To trigger a manual update: Actions -> Weekly Rate Limit Update -> Run workflow.
 ### Phase 3 - CDN and Automation
 
 - [x] Auto-purge jsDelivr CDN after every weekly update
-- [ ] Embeddable badges: RPM and TPM per model/tier (shields.io endpoint)
-- [ ] Shareable URLs: query params preserve active filters
+- [x] Embeddable badges: RPM, TPM and RPD per model/tier (shields.io endpoint)
+- [x] Shareable URLs: query params preserve active filters
 
 ### Phase 4 - Expand Coverage
 
