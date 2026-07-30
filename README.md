@@ -37,6 +37,8 @@ Weekly-updated API rate limits for all major LLM providers. RPM, TPM, RPD by tie
 | Cerebras | GPT-OSS 120B, GLM-4.7, Gemma 4 31B | Free, Developer |
 | SambaNova | Llama 3.3 70B, DeepSeek V3.1 | Free, Developer |
 | NVIDIA NIM | 100+ models | Free |
+| AI21 Labs | Jamba Large, Jamba Mini | Default |
+| Qwen | Qwen3.7-Max, Qwen3.5-Plus, Qwen3.5-Flash, Qwen-Plus, Qwen-Turbo | Default |
 
 Providers that don't publish numerical limits appear with `null` values and a note linking to their docs.
 
@@ -206,6 +208,13 @@ To trigger a manual update: Actions -> Weekly Rate Limit Update -> Run workflow.
 - [x] Rate limit history chart on the live site
 - [x] Provider comparison view: side-by-side tier diff
 - [x] Calculator: enter RPM/TPM/RPD requirements and see which tiers cover them
+
+### Phase 7 - Polish and Parity
+
+- [x] Fix CI to lint on all branches, not just main
+- [x] Pin ruff version in requirements-dev.txt
+- [x] Persistent changelog file (generate_changelog.py)
+- [x] Add AI21 Labs and Qwen rate limits
 
 ---
 

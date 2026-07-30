@@ -25,7 +25,7 @@ def load_snapshot(path: Path) -> dict[str, dict]:
 
 
 def main() -> None:
-    snapshots = sorted(HISTORY_DIR.glob("*.json"))
+    snapshots = sorted(p for p in HISTORY_DIR.glob("*.json") if p.stem != "index")
     if len(snapshots) < 2:
         print("changed=false")
         return

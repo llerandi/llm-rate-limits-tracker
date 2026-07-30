@@ -86,7 +86,7 @@ def date_to_rfc3339(date_str: str) -> str:
 
 
 def main() -> None:
-    snapshots = sorted(HISTORY_DIR.glob("*.json"))
+    snapshots = sorted(p for p in HISTORY_DIR.glob("*.json") if p.stem != "index")
     if len(snapshots) < 2:
         entries: list[dict] = []
     else:

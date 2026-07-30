@@ -227,7 +227,7 @@ def main() -> None:
     today = datetime.now(tz=timezone.utc).date().isoformat()
 
     data = json.loads(DATA_FILE.read_text(encoding="utf-8"))
-    snapshots = sorted(HISTORY_DIR.glob("*.json"))
+    snapshots = sorted(p for p in HISTORY_DIR.glob("*.json") if p.stem != "index")
 
     new_snap = load_snapshot(snapshots[-1]) if snapshots else {}
     old_snap: dict[str, dict] | None = None

@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: ["**"]
   pull_request:
 
 jobs:
@@ -19,8 +19,8 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Install ruff
-        run: pip install ruff --break-system-packages
+      - name: Install dev dependencies
+        run: pip install -r requirements-dev.txt --break-system-packages
 
       - name: Run ruff check
         run: ruff check scripts/

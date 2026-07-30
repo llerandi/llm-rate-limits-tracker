@@ -1,0 +1,43 @@
+{
+  "last_updated": "2026-07-31",
+  "provider": "AI21 Labs",
+  "provider_id": "ai21",
+  "models": [
+    {
+      "provider": "AI21 Labs",
+      "provider_id": "ai21",
+      "model_id": "jamba-large",
+      "model_name": "Jamba Large",
+      "docs_url": "https://docs.ai21.com/docs/rate-limits",
+      "notes": "Limits apply per API key. RPS (10) is also enforced in addition to RPM. TPM not published. Contact sales@ai21.com for higher limits.",
+      "limits": {
+        "default": {
+          "spend_threshold_usd": null,
+          "rpm": 200,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "AI21 Labs",
+      "provider_id": "ai21",
+      "model_id": "jamba-mini",
+      "model_name": "Jamba Mini",
+      "docs_url": "https://docs.ai21.com/docs/rate-limits",
+      "notes": "Limits apply per API key. RPS (10) is also enforced in addition to RPM. TPM not published. Contact sales@ai21.com for higher limits.",
+      "limits": {
+        "default": {
+          "spend_threshold_usd": null,
+          "rpm": 200,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    }
+  ]
+}
