@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-30",
+  "last_updated": "2026-07-31",
   "schema_version": "1.0",
   "notes": "RPM = requests/minute, TPM = tokens/minute, RPD = requests/day, TPD = tokens/day. ITPM/OTPM = input/output tokens per minute (Anthropic-style). Null means not published or not applicable. Limits apply per API key unless noted.",
   "models": [
@@ -984,6 +984,132 @@
           "rpd": null,
           "tpd": null,
           "notes": "One pool per data zone (US zone, EU zone). Tier 1 default. 300 RPM burst window per 10-second interval."
+        }
+      }
+    },
+    {
+      "provider": "AI21 Labs",
+      "provider_id": "ai21",
+      "model_id": "jamba-large",
+      "model_name": "Jamba Large",
+      "docs_url": "https://docs.ai21.com/docs/rate-limits",
+      "notes": "Limits apply per API key. RPS (10) is also enforced in addition to RPM. TPM not published. Contact sales@ai21.com for higher limits.",
+      "limits": {
+        "default": {
+          "spend_threshold_usd": null,
+          "rpm": 200,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "AI21 Labs",
+      "provider_id": "ai21",
+      "model_id": "jamba-mini",
+      "model_name": "Jamba Mini",
+      "docs_url": "https://docs.ai21.com/docs/rate-limits",
+      "notes": "Limits apply per API key. RPS (10) is also enforced in addition to RPM. TPM not published. Contact sales@ai21.com for higher limits.",
+      "limits": {
+        "default": {
+          "spend_threshold_usd": null,
+          "rpm": 200,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Qwen",
+      "provider_id": "qwen",
+      "model_id": "qwen3-7-max",
+      "model_name": "Qwen3.7-Max",
+      "docs_url": "https://www.alibabacloud.com/help/en/model-studio/rate-limit",
+      "notes": "Limits are per Alibaba Cloud root account (aggregated across all API keys). International deployment scope. Batch API calls are exempt from rate limits.",
+      "limits": {
+        "default": {
+          "spend_threshold_usd": null,
+          "rpm": 600,
+          "tpm": 1000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Qwen",
+      "provider_id": "qwen",
+      "model_id": "qwen3-5-plus",
+      "model_name": "Qwen3.5-Plus",
+      "docs_url": "https://www.alibabacloud.com/help/en/model-studio/rate-limit",
+      "notes": "Limits are per Alibaba Cloud root account (aggregated across all API keys). International deployment scope. Batch API calls are exempt from rate limits.",
+      "limits": {
+        "default": {
+          "spend_threshold_usd": null,
+          "rpm": 15000,
+          "tpm": 6000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Qwen",
+      "provider_id": "qwen",
+      "model_id": "qwen3-5-flash",
+      "model_name": "Qwen3.5-Flash",
+      "docs_url": "https://www.alibabacloud.com/help/en/model-studio/rate-limit",
+      "notes": "Limits are per Alibaba Cloud root account (aggregated across all API keys). International deployment scope. Batch API calls are exempt from rate limits.",
+      "limits": {
+        "default": {
+          "spend_threshold_usd": null,
+          "rpm": 15000,
+          "tpm": 5000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Qwen",
+      "provider_id": "qwen",
+      "model_id": "qwen-plus",
+      "model_name": "Qwen-Plus",
+      "docs_url": "https://www.alibabacloud.com/help/en/model-studio/rate-limit",
+      "notes": "Limits are per Alibaba Cloud root account (aggregated across all API keys). International deployment scope. Batch API calls are exempt from rate limits.",
+      "limits": {
+        "default": {
+          "spend_threshold_usd": null,
+          "rpm": 600,
+          "tpm": 1500000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Qwen",
+      "provider_id": "qwen",
+      "model_id": "qwen-turbo",
+      "model_name": "Qwen-Turbo",
+      "docs_url": "https://www.alibabacloud.com/help/en/model-studio/rate-limit",
+      "notes": "Limits are per Alibaba Cloud root account (aggregated across all API keys). International deployment scope. Batch API calls are exempt from rate limits.",
+      "limits": {
+        "default": {
+          "spend_threshold_usd": null,
+          "rpm": 600,
+          "tpm": 5000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
         }
       }
     }

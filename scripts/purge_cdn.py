@@ -26,6 +26,7 @@ STATIC_PATHS = [
     "data/rate-limits.json",
     "data/feed.xml",
     "data/history/index.json",
+    "data/changelog.md",
 ]
 
 

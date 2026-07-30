@@ -10,4 +10,11 @@
     <name>LLM Rate Limits Tracker</name>
     <uri>https://github.com/llerandi/llm-rate-limits-tracker</uri>
   </author>
+  <entry>
+    <title>13 rate limit changes (2026-07-30)</title>
+    <id>https://github.com/llerandi/llm-rate-limits-tracker/blob/main/data/history/2026-07-30.json</id>
+    <updated>2026-07-30T00:00:00Z</updated>
+    <link href="https://github.com/llerandi/llm-rate-limits-tracker/blob/main/data/history/2026-07-30.json" rel="alternate" />
+    <content type="html">&lt;h3&gt;New models&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Cerebras GPT-OSS 120B (Cerebras) (new model)&lt;/li&gt;&lt;li&gt;Cerebras GLM-4.7 (Cerebras) (new model)&lt;/li&gt;&lt;li&gt;Cerebras Gemma 4 31B (Cerebras) (new model)&lt;/li&gt;&lt;li&gt;SambaNova Llama 3.3 70B (SambaNova) (new model)&lt;/li&gt;&lt;li&gt;SambaNova DeepSeek V3.1 (SambaNova) (new model)&lt;/li&gt;&lt;li&gt;NVIDIA NIM NVIDIA NIM API (all models) (new model)&lt;/li&gt;&lt;li&gt;Perplexity Sonar Reasoning Pro (new model)&lt;/li&gt;&lt;li&gt;Perplexity Sonar Deep Research (new model)&lt;/li&gt;&lt;li&gt;Azure OpenAI GPT-5.1 (new model)&lt;/li&gt;&lt;li&gt;Azure OpenAI GPT-5.4 (new model)&lt;/li&gt;&lt;li&gt;Azure OpenAI GPT-5.4 Nano (new model)&lt;/li&gt;&lt;li&gt;Azure OpenAI o3 (new model)&lt;/li&gt;&lt;li&gt;Azure OpenAI o4-mini (new model)&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Full data: &lt;a href="https://cdn.jsdelivr.net/gh/llerandi/llm-rate-limits-tracker@main/data/rate-limits.json"&gt;rate-limits.json&lt;/a&gt; | &lt;a href="https://llerandi.github.io/llm-rate-limits-tracker/"&gt;Live site&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
 </feed>
