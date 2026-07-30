@@ -9,6 +9,7 @@ Output: data/feed.xml
 
 from __future__ import annotations
 
+import itertools
 import json
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
@@ -91,7 +92,7 @@ def main() -> None:
         entries: list[dict] = []
     else:
         entries = []
-        pairs = list(zip(snapshots[:-1], snapshots[1:]))
+        pairs = list(itertools.pairwise(snapshots))
         for old_path, new_path in pairs[-MAX_ENTRIES:]:
             old = load_snapshot(old_path)
             new = load_snapshot(new_path)
