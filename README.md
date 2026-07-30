@@ -33,6 +33,7 @@ Weekly-updated API rate limits for all major LLM providers. RPM, TPM, RPD by tie
 | xAI | Grok 4.3 | Tier 0-4 |
 | Perplexity | Sonar, Sonar Pro, Sonar Reasoning Pro, Deep Research | Tier 0, 1, 3 |
 | Amazon Bedrock | Various | On-demand, Provisioned |
+| Azure OpenAI | GPT-5.1, GPT-5.4, GPT-5.4 Nano, o3, o4-mini | Global Standard, Data Zone Standard |
 | Cerebras | GPT-OSS 120B, GLM-4.7, Gemma 4 31B | Free, Developer |
 | SambaNova | Llama 3.3 70B, DeepSeek V3.1 | Free, Developer |
 | NVIDIA NIM | 100+ models | Free |
@@ -191,7 +192,7 @@ To trigger a manual update: Actions -> Weekly Rate Limit Update -> Run workflow.
 
 - [x] More models per provider (Perplexity: Sonar Reasoning Pro, Deep Research)
 - [x] Free-tier providers: Cerebras, SambaNova, Nvidia NIM
-- [ ] Per-region limits for Amazon Bedrock and Azure OpenAI
+- [x] Per-region limits for Amazon Bedrock and Azure OpenAI
 
 ### Phase 5 - Community
 
