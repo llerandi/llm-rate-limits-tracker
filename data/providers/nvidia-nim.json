@@ -1,0 +1,25 @@
+{
+  "last_updated": "2026-07-30",
+  "provider": "NVIDIA NIM",
+  "provider_id": "nvidia-nim",
+  "models": [
+    {
+      "provider": "NVIDIA NIM",
+      "provider_id": "nvidia-nim",
+      "model_id": "nvidia-nim-api",
+      "model_name": "NVIDIA NIM API (all models)",
+      "docs_url": "https://build.nvidia.com/explore/discover",
+      "notes": "100+ models on build.nvidia.com including Llama, Mistral, Gemma, Phi, and NVIDIA Nemotron. Free tier via NVIDIA Developer Program (free signup, no credit card). Production use requires NVIDIA AI Enterprise license. RPM varies by model and server load.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 40,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "~1,000 inference credits included. 40 RPM is the community baseline; actual limit varies by model and traffic. TPM not published."
+        }
+      }
+    }
+  ]
+}

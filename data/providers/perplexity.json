@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-29",
+  "last_updated": "2026-07-30",
   "provider": "Perplexity",
   "provider_id": "perplexity",
   "models": [
@@ -64,6 +64,74 @@
         "tier-3": {
           "spend_threshold_usd": 500,
           "rpm": 1000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Perplexity",
+      "provider_id": "perplexity",
+      "model_id": "sonar-reasoning-pro",
+      "model_name": "Sonar Reasoning Pro",
+      "docs_url": "https://docs.perplexity.ai/docs/admin/rate-limits-usage-tiers",
+      "notes": "Search-augmented reasoning model. Same tier thresholds as Sonar and Sonar Pro. Tiers 4 and 5 both cap at 4,000 RPM.",
+      "limits": {
+        "tier-0": {
+          "spend_threshold_usd": 0,
+          "rpm": 50,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "New account"
+        },
+        "tier-1": {
+          "spend_threshold_usd": 50,
+          "rpm": 150,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 500,
+          "rpm": 1000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Perplexity",
+      "provider_id": "perplexity",
+      "model_id": "sonar-deep-research",
+      "model_name": "Sonar Deep Research",
+      "docs_url": "https://docs.perplexity.ai/docs/admin/rate-limits-usage-tiers",
+      "notes": "Autonomous multi-step research model with significantly lower rate limits due to heavy compute per request. Async endpoint available at POST /v1/async/sonar. Tiers 4 and 5 cap at 60 and 100 RPM respectively.",
+      "limits": {
+        "tier-0": {
+          "spend_threshold_usd": 0,
+          "rpm": 5,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "New account"
+        },
+        "tier-1": {
+          "spend_threshold_usd": 50,
+          "rpm": 10,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 500,
+          "rpm": 40,
           "tpm": null,
           "rpd": null,
           "tpd": null,

@@ -1,0 +1,59 @@
+{
+  "last_updated": "2026-07-30",
+  "provider": "SambaNova",
+  "provider_id": "sambanova",
+  "models": [
+    {
+      "provider": "SambaNova",
+      "provider_id": "sambanova",
+      "model_id": "sambanova-llama-3-3-70b",
+      "model_name": "Llama 3.3 70B (SambaNova)",
+      "docs_url": "https://docs.sambanova.ai/docs/en/models/rate-limits",
+      "notes": "Highest RPM on SambaNova at developer tier. All developer-tier accounts share a 20M tokens/day cap across all models. Served on SambaNova RDU hardware with high sustained throughput.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 20,
+          "tpm": null,
+          "rpd": 20,
+          "tpd": 200000,
+          "notes": "No payment method required."
+        },
+        "developer": {
+          "spend_threshold_usd": null,
+          "rpm": 240,
+          "tpm": null,
+          "rpd": 48000,
+          "tpd": null,
+          "notes": "Payment method linked. 20M TPD cap shared across all models on the account."
+        }
+      }
+    },
+    {
+      "provider": "SambaNova",
+      "provider_id": "sambanova",
+      "model_id": "sambanova-deepseek-v3-1",
+      "model_name": "DeepSeek V3.1 (SambaNova)",
+      "docs_url": "https://docs.sambanova.ai/docs/en/models/rate-limits",
+      "notes": "DeepSeek V3.1 served on SambaNova RDU hardware. Not the same as the DeepSeek-hosted API; rate limits and latency differ. 20M TPD cap shared across all models at developer tier.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 20,
+          "tpm": null,
+          "rpd": 20,
+          "tpd": 200000,
+          "notes": "No payment method required."
+        },
+        "developer": {
+          "spend_threshold_usd": null,
+          "rpm": 60,
+          "tpm": null,
+          "rpd": 12000,
+          "tpd": null,
+          "notes": "Payment method linked. 20M TPD cap shared across all models on the account."
+        }
+      }
+    }
+  ]
+}
