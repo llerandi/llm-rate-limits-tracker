@@ -1,0 +1,85 @@
+{
+  "last_updated": "2026-07-30",
+  "provider": "Cerebras",
+  "provider_id": "cerebras",
+  "models": [
+    {
+      "provider": "Cerebras",
+      "provider_id": "cerebras",
+      "model_id": "cerebras-gpt-oss-120b",
+      "model_name": "GPT-OSS 120B (Cerebras)",
+      "docs_url": "https://inference-docs.cerebras.ai/support/rate-limits",
+      "notes": "Served on Cerebras wafer-scale silicon. Dual-bucket model: uncached TPM (primary limit) and total TPM (3x uncached). Free trial requires adding a payment method to receive $5 credit; expires in 30 days.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 5,
+          "tpm": 30000,
+          "rpd": null,
+          "tpd": 1000000,
+          "notes": "Free trial. Also 1M tokens/hour (TPH) hard cap."
+        },
+        "developer": {
+          "spend_threshold_usd": null,
+          "rpm": 1000,
+          "tpm": 1000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Pay as You Go (first credit purchase). No hourly or daily token caps."
+        }
+      }
+    },
+    {
+      "provider": "Cerebras",
+      "provider_id": "cerebras",
+      "model_id": "cerebras-glm-4-7",
+      "model_name": "GLM-4.7 (Cerebras)",
+      "docs_url": "https://inference-docs.cerebras.ai/support/rate-limits",
+      "notes": "ZhipuAI GLM-4.7 served on Cerebras hardware. Same dual-bucket token model as other Cerebras endpoints.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 5,
+          "tpm": 30000,
+          "rpd": null,
+          "tpd": 1000000,
+          "notes": "Free trial. Also 1M tokens/hour (TPH) hard cap."
+        },
+        "developer": {
+          "spend_threshold_usd": null,
+          "rpm": 500,
+          "tpm": 500000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Pay as You Go. No hourly or daily token caps."
+        }
+      }
+    },
+    {
+      "provider": "Cerebras",
+      "provider_id": "cerebras",
+      "model_id": "cerebras-gemma-4-31b",
+      "model_name": "Gemma 4 31B (Cerebras)",
+      "docs_url": "https://inference-docs.cerebras.ai/support/rate-limits",
+      "notes": "Google Gemma 4 31B served on Cerebras hardware. Supports images: 2/request on free tier (4 MB payload), 10/request on developer tier (10 MB payload).",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 5,
+          "tpm": 30000,
+          "rpd": null,
+          "tpd": 1000000,
+          "notes": "Free trial. 2 images per request, 4 MB payload limit."
+        },
+        "developer": {
+          "spend_threshold_usd": null,
+          "rpm": 300,
+          "tpm": 500000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Pay as You Go. 10 images per request, 10 MB payload limit."
+        }
+      }
+    }
+  ]
+}

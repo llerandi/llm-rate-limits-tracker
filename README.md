@@ -21,18 +21,21 @@ Weekly-updated API rate limits for all major LLM providers. RPM, TPM, RPD by tie
 
 | Provider | Models | Tiers |
 |---|---|---|
-| OpenAI | GPT-5.5, GPT-4.5 nano | Tier 1-5 |
+| OpenAI | GPT-5.5, GPT-5.4 Nano | Tier 1-5 |
 | Anthropic | Claude Opus 4.8, Sonnet 5, Haiku 4.5 | Tier 1-4 |
 | Google | Gemini 3.1 Pro, Flash-Lite | Pay-as-you-go |
-| Mistral | Mistral Large, Medium | Console-only |
+| Mistral | All models | Console-only |
 | Cohere | Command R+ | Trial, Production |
 | Groq | Llama 4 Scout, Maverick | Free, Developer |
 | Together AI | Various | Dynamic |
 | Fireworks AI | Various | Free, Paid |
-| DeepSeek | DeepSeek R2 | Dynamic |
-| xAI | Grok 3 | Tier 0-4 |
-| Perplexity | Sonar, Sonar Pro | Tier 0, 1, 3 |
+| DeepSeek | DeepSeek V4 Flash, V4 Pro | Dynamic |
+| xAI | Grok 4.3 | Tier 0-4 |
+| Perplexity | Sonar, Sonar Pro, Sonar Reasoning Pro, Deep Research | Tier 0, 1, 3 |
 | Amazon Bedrock | Various | On-demand, Provisioned |
+| Cerebras | GPT-OSS 120B, GLM-4.7, Gemma 4 31B | Free, Developer |
+| SambaNova | Llama 3.3 70B, DeepSeek V3.1 | Free, Developer |
+| NVIDIA NIM | 100+ models | Free |
 
 Providers that don't publish numerical limits appear with `null` values and a note linking to their docs.
 
@@ -186,8 +189,8 @@ To trigger a manual update: Actions -> Weekly Rate Limit Update -> Run workflow.
 
 ### Phase 4 - Expand Coverage
 
-- [ ] More models per provider
-- [ ] Free-tier providers: Cerebras, SambaNova, Nvidia NIM
+- [x] More models per provider (Perplexity: Sonar Reasoning Pro, Deep Research)
+- [x] Free-tier providers: Cerebras, SambaNova, Nvidia NIM
 - [ ] Per-region limits for Amazon Bedrock and Azure OpenAI
 
 ### Phase 5 - Community
