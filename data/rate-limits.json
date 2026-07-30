@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-29",
+  "last_updated": "2026-07-30",
   "schema_version": "1.0",
   "notes": "RPM = requests/minute, TPM = tokens/minute, RPD = requests/day, TPD = tokens/day. ITPM/OTPM = input/output tokens per minute (Anthropic-style). Null means not published or not applicable. Limits apply per API key unless noted.",
   "models": [
@@ -638,6 +638,222 @@
           "rpd": null,
           "tpd": null,
           "notes": "Per-model per-region quotas. Default ratio is 6 RPM per 1,000 TPM. Check AWS Service Quotas console for your account limits."
+        }
+      }
+    },
+    {
+      "provider": "Cerebras",
+      "provider_id": "cerebras",
+      "model_id": "cerebras-gpt-oss-120b",
+      "model_name": "GPT-OSS 120B (Cerebras)",
+      "docs_url": "https://inference-docs.cerebras.ai/support/rate-limits",
+      "notes": "Served on Cerebras wafer-scale silicon. Dual-bucket model: uncached TPM (primary limit) and total TPM (3x uncached). Free trial requires adding a payment method to receive $5 credit; expires in 30 days.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 5,
+          "tpm": 30000,
+          "rpd": null,
+          "tpd": 1000000,
+          "notes": "Free trial. Also 1M tokens/hour (TPH) hard cap."
+        },
+        "developer": {
+          "spend_threshold_usd": null,
+          "rpm": 1000,
+          "tpm": 1000000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Pay as You Go (first credit purchase). No hourly or daily token caps."
+        }
+      }
+    },
+    {
+      "provider": "Cerebras",
+      "provider_id": "cerebras",
+      "model_id": "cerebras-glm-4-7",
+      "model_name": "GLM-4.7 (Cerebras)",
+      "docs_url": "https://inference-docs.cerebras.ai/support/rate-limits",
+      "notes": "ZhipuAI GLM-4.7 served on Cerebras hardware. Same dual-bucket token model as other Cerebras endpoints.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 5,
+          "tpm": 30000,
+          "rpd": null,
+          "tpd": 1000000,
+          "notes": "Free trial. Also 1M tokens/hour (TPH) hard cap."
+        },
+        "developer": {
+          "spend_threshold_usd": null,
+          "rpm": 500,
+          "tpm": 500000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Pay as You Go. No hourly or daily token caps."
+        }
+      }
+    },
+    {
+      "provider": "Cerebras",
+      "provider_id": "cerebras",
+      "model_id": "cerebras-gemma-4-31b",
+      "model_name": "Gemma 4 31B (Cerebras)",
+      "docs_url": "https://inference-docs.cerebras.ai/support/rate-limits",
+      "notes": "Google Gemma 4 31B served on Cerebras hardware. Supports images: 2/request on free tier (4 MB payload), 10/request on developer tier (10 MB payload).",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 5,
+          "tpm": 30000,
+          "rpd": null,
+          "tpd": 1000000,
+          "notes": "Free trial. 2 images per request, 4 MB payload limit."
+        },
+        "developer": {
+          "spend_threshold_usd": null,
+          "rpm": 300,
+          "tpm": 500000,
+          "rpd": null,
+          "tpd": null,
+          "notes": "Pay as You Go. 10 images per request, 10 MB payload limit."
+        }
+      }
+    },
+    {
+      "provider": "SambaNova",
+      "provider_id": "sambanova",
+      "model_id": "sambanova-llama-3-3-70b",
+      "model_name": "Llama 3.3 70B (SambaNova)",
+      "docs_url": "https://docs.sambanova.ai/docs/en/models/rate-limits",
+      "notes": "Highest RPM on SambaNova at developer tier. All developer-tier accounts share a 20M tokens/day cap across all models. Served on SambaNova RDU hardware with high sustained throughput.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 20,
+          "tpm": null,
+          "rpd": 20,
+          "tpd": 200000,
+          "notes": "No payment method required."
+        },
+        "developer": {
+          "spend_threshold_usd": null,
+          "rpm": 240,
+          "tpm": null,
+          "rpd": 48000,
+          "tpd": null,
+          "notes": "Payment method linked. 20M TPD cap shared across all models on the account."
+        }
+      }
+    },
+    {
+      "provider": "SambaNova",
+      "provider_id": "sambanova",
+      "model_id": "sambanova-deepseek-v3-1",
+      "model_name": "DeepSeek V3.1 (SambaNova)",
+      "docs_url": "https://docs.sambanova.ai/docs/en/models/rate-limits",
+      "notes": "DeepSeek V3.1 served on SambaNova RDU hardware. Not the same as the DeepSeek-hosted API; rate limits and latency differ. 20M TPD cap shared across all models at developer tier.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 20,
+          "tpm": null,
+          "rpd": 20,
+          "tpd": 200000,
+          "notes": "No payment method required."
+        },
+        "developer": {
+          "spend_threshold_usd": null,
+          "rpm": 60,
+          "tpm": null,
+          "rpd": 12000,
+          "tpd": null,
+          "notes": "Payment method linked. 20M TPD cap shared across all models on the account."
+        }
+      }
+    },
+    {
+      "provider": "NVIDIA NIM",
+      "provider_id": "nvidia-nim",
+      "model_id": "nvidia-nim-api",
+      "model_name": "NVIDIA NIM API (all models)",
+      "docs_url": "https://build.nvidia.com/explore/discover",
+      "notes": "100+ models on build.nvidia.com including Llama, Mistral, Gemma, Phi, and NVIDIA Nemotron. Free tier via NVIDIA Developer Program (free signup, no credit card). Production use requires NVIDIA AI Enterprise license. RPM varies by model and server load.",
+      "limits": {
+        "free": {
+          "spend_threshold_usd": 0,
+          "rpm": 40,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "~1,000 inference credits included. 40 RPM is the community baseline; actual limit varies by model and traffic. TPM not published."
+        }
+      }
+    },
+    {
+      "provider": "Perplexity",
+      "provider_id": "perplexity",
+      "model_id": "sonar-reasoning-pro",
+      "model_name": "Sonar Reasoning Pro",
+      "docs_url": "https://docs.perplexity.ai/docs/admin/rate-limits-usage-tiers",
+      "notes": "Search-augmented reasoning model. Same tier thresholds as Sonar and Sonar Pro. Tiers 4 and 5 both cap at 4,000 RPM.",
+      "limits": {
+        "tier-0": {
+          "spend_threshold_usd": 0,
+          "rpm": 50,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "New account"
+        },
+        "tier-1": {
+          "spend_threshold_usd": 50,
+          "rpm": 150,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 500,
+          "rpm": 1000,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "provider": "Perplexity",
+      "provider_id": "perplexity",
+      "model_id": "sonar-deep-research",
+      "model_name": "Sonar Deep Research",
+      "docs_url": "https://docs.perplexity.ai/docs/admin/rate-limits-usage-tiers",
+      "notes": "Autonomous multi-step research model with significantly lower rate limits due to heavy compute per request. Async endpoint available at POST /v1/async/sonar. Tiers 4 and 5 cap at 60 and 100 RPM respectively.",
+      "limits": {
+        "tier-0": {
+          "spend_threshold_usd": 0,
+          "rpm": 5,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": "New account"
+        },
+        "tier-1": {
+          "spend_threshold_usd": 50,
+          "rpm": 10,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
+        },
+        "tier-3": {
+          "spend_threshold_usd": 500,
+          "rpm": 40,
+          "tpm": null,
+          "rpd": null,
+          "tpd": null,
+          "notes": null
         }
       }
     }
