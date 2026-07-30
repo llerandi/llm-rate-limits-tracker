@@ -302,6 +302,21 @@
       .container { padding: 16px; }
       .search-box { max-width: 100%; }
     }
+
+    /* History chart */
+    .history-controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+    .history-select { padding: 5px 9px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text); font-size: 13px; }
+    #history-model { min-width: 240px; }
+    .chart-wrap { position: relative; height: 260px; }
+    .chart-msg { color: var(--text-muted); font-size: 13px; padding: 32px 0; text-align: center; }
+
+    /* Comparison */
+    .compare-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    @media (max-width: 640px) { .compare-cols { grid-template-columns: 1fr; } }
+    .compare-col label { display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; }
+    .compare-col select { width: 100%; padding: 5px 9px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text); font-size: 13px; }
+    .compare-diff-cell { background: rgba(218,9,9,.08); }
+    [data-theme="dark"] .compare-diff-cell { background: rgba(255,80,80,.12); }
   </style>
 </head>
 <body>
@@ -394,6 +409,38 @@
         <tbody id="main-tbody"></tbody>
       </table>
     </div>
+
+    <!-- History chart -->
+    <h2 class="section-title" style="margin-top:36px">Rate Limit History</h2>
+    <p class="section-desc">Track how a model's rate limits have changed week over week.</p>
+    <div class="history-controls">
+      <select id="history-model" class="history-select" aria-label="Select model and tier"></select>
+      <select id="history-metric" class="history-select" aria-label="Select metric">
+        <option value="rpm">RPM</option>
+        <option value="tpm">TPM</option>
+        <option value="rpd">RPD</option>
+      </select>
+    </div>
+    <p id="history-msg" class="chart-msg"></p>
+    <div class="chart-wrap" id="history-chart-wrap" style="display:none">
+      <canvas id="history-canvas"></canvas>
+    </div>
+
+    <!-- Comparison -->
+    <h2 class="section-title" style="margin-top:36px">Compare Models</h2>
+    <p class="section-desc">Select two model/tier combinations to compare limits side by side. Highlighted cells differ.</p>
+    <div class="compare-cols">
+      <div class="compare-col">
+        <label for="compare-a">Model A</label>
+        <select id="compare-a"></select>
+      </div>
+      <div class="compare-col">
+        <label for="compare-b">Model B</label>
+        <select id="compare-b"></select>
+      </div>
+    </div>
+    <div id="compare-result"></div>
+
   </div>
 </div>
 
@@ -404,8 +451,10 @@
   <a href="https://llerandi.github.io/llm-price-tracker/">LLM Price Tracker</a>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
   const CDN_URL = "https://cdn.jsdelivr.net/gh/llerandi/llm-rate-limits-tracker@main/data/rate-limits.json";
+  const HIST_CDN = "https://cdn.jsdelivr.net/gh/llerandi/llm-rate-limits-tracker@main/data/history";
 
   // Flattened rows: one per model+tier
   let rows = [];
@@ -478,8 +527,11 @@
       buildProviderPills();
       buildTierPills();
       render();
+      buildHistModelSelect();
+      buildCompareSelects();
       document.getElementById("loading").style.display = "none";
       document.getElementById("app").style.display = "";
+      loadHistIndex().then(drawHistChart);
     } catch (e) {
       document.getElementById("loading").style.display = "none";
       const box = document.getElementById("error-box");
@@ -747,6 +799,227 @@
       localStorage.setItem("theme", next);
     });
   })();
+
+  // ---- History chart ----
+  let histIndex = [];
+  let histSnapshots = {};
+  let histChart = null;
+
+  async function loadHistIndex() {
+    try {
+      const res = await fetch(HIST_CDN + "/index.json");
+      if (res.ok) histIndex = await res.json();
+    } catch {}
+  }
+
+  function buildHistModelSelect() {
+    const sel = document.getElementById("history-model");
+    sel.innerHTML = "";
+    const seen = new Set();
+    const byProvider = {};
+    for (const r of rows) {
+      const val = r.model_id + "::" + r.tier;
+      if (seen.has(val)) continue;
+      seen.add(val);
+      if (!byProvider[r.provider]) byProvider[r.provider] = [];
+      byProvider[r.provider].push({ val, label: r.model_name + " / " + r.tier });
+    }
+    for (const prov of Object.keys(byProvider).sort()) {
+      const og = document.createElement("optgroup");
+      og.label = prov;
+      for (const { val, label } of byProvider[prov]) {
+        const opt = document.createElement("option");
+        opt.value = val;
+        opt.textContent = label;
+        og.appendChild(opt);
+      }
+      sel.appendChild(og);
+    }
+    sel.addEventListener("change", drawHistChart);
+    document.getElementById("history-metric").addEventListener("change", drawHistChart);
+  }
+
+  async function fetchHistSnapshots() {
+    for (const date of histIndex) {
+      if (histSnapshots[date]) continue;
+      try {
+        const res = await fetch(HIST_CDN + "/" + date + ".json");
+        if (!res.ok) continue;
+        const snap = await res.json();
+        const byKey = {};
+        for (const m of snap.models) {
+          for (const [tier, limits] of Object.entries(m.limits)) {
+            byKey[m.model_id + "::" + tier] = limits;
+          }
+        }
+        histSnapshots[date] = byKey;
+      } catch {}
+    }
+  }
+
+  function getCssVar(name) {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+
+  async function drawHistChart() {
+    const selVal = document.getElementById("history-model").value;
+    const metric = document.getElementById("history-metric").value;
+    const msg = document.getElementById("history-msg");
+    const wrap = document.getElementById("history-chart-wrap");
+
+    await fetchHistSnapshots();
+
+    const dates = Object.keys(histSnapshots).sort();
+    const values = dates.map(d => {
+      const lim = histSnapshots[d][selVal];
+      if (!lim) return null;
+      if (metric === "tpm") return lim.tpm ?? lim.itpm ?? null;
+      return lim[metric] ?? null;
+    });
+
+    const hasData = values.some(v => v !== null);
+    if (!hasData || dates.length < 2) {
+      msg.textContent = dates.length < 2
+        ? "Not enough history yet - check back after the next weekly update."
+        : "No data for this metric / model combination.";
+      msg.style.display = "";
+      wrap.style.display = "none";
+      if (histChart) { histChart.destroy(); histChart = null; }
+      return;
+    }
+    msg.style.display = "none";
+    wrap.style.display = "";
+
+    const textColor = getCssVar("--text");
+    const gridColor = getCssVar("--border");
+    const primaryColor = getCssVar("--primary");
+
+    const chartData = {
+      labels: dates,
+      datasets: [{
+        label: metric.toUpperCase(),
+        data: values,
+        borderColor: primaryColor,
+        backgroundColor: primaryColor + "22",
+        fill: true,
+        tension: 0.3,
+        pointRadius: 4,
+        spanGaps: true,
+      }]
+    };
+    const chartOpts = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              const v = ctx.parsed.y;
+              if (v === null) return "N/A";
+              const label = metric.toUpperCase() + ": ";
+              if (v >= 1e6) return label + (v / 1e6).toFixed(1) + "M";
+              if (v >= 1000) return label + (v / 1000).toFixed(0) + "K";
+              return label + v;
+            }
+          }
+        }
+      },
+      scales: {
+        x: { ticks: { color: textColor }, grid: { color: gridColor } },
+        y: {
+          beginAtZero: false,
+          ticks: {
+            color: textColor,
+            callback: v => {
+              if (v >= 1e6) return (v / 1e6).toFixed(1) + "M";
+              if (v >= 1000) return (v / 1000).toFixed(0) + "K";
+              return v;
+            }
+          },
+          grid: { color: gridColor }
+        }
+      }
+    };
+
+    if (histChart) {
+      histChart.data = chartData;
+      histChart.options = chartOpts;
+      histChart.update();
+    } else {
+      histChart = new Chart(document.getElementById("history-canvas"), { type: "line", data: chartData, options: chartOpts });
+    }
+  }
+
+  // Redraw chart on theme toggle so axis colours match
+  document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (histChart) setTimeout(drawHistChart, 50);
+  });
+
+  // ---- Comparison view ----
+  function buildCompareSelects() {
+    const opts = [];
+    const seen = new Set();
+    for (const r of rows) {
+      const val = r.model_id + "::" + r.tier;
+      if (!seen.has(val)) {
+        seen.add(val);
+        opts.push({ val, label: r.provider + " / " + r.model_name + " / " + r.tier });
+      }
+    }
+    opts.sort((a, b) => a.label.localeCompare(b.label));
+
+    ["compare-a", "compare-b"].forEach((id, i) => {
+      const sel = document.getElementById(id);
+      sel.innerHTML = "";
+      opts.forEach(({ val, label }) => {
+        const opt = document.createElement("option");
+        opt.value = val;
+        opt.textContent = label;
+        sel.appendChild(opt);
+      });
+      if (i === 1 && opts.length > 1) sel.selectedIndex = 1;
+      sel.addEventListener("change", renderComparison);
+    });
+    renderComparison();
+  }
+
+  function renderComparison() {
+    const [midA, tierA] = document.getElementById("compare-a").value.split("::");
+    const [midB, tierB] = document.getElementById("compare-b").value.split("::");
+    const rowA = rows.find(r => r.model_id === midA && r.tier === tierA);
+    const rowB = rows.find(r => r.model_id === midB && r.tier === tierB);
+    if (!rowA || !rowB) return;
+
+    const fields = [
+      ["RPM", "rpm"], ["TPM", "tpm"], ["ITPM", "itpm"], ["OTPM", "otpm"],
+      ["RPD", "rpd"], ["TPD", "tpd"], ["Min spend ($)", "spend_threshold_usd"],
+    ];
+
+    const labelA = rowA.provider + " " + rowA.model_name + " / " + rowA.tier;
+    const labelB = rowB.provider + " " + rowB.model_name + " / " + rowB.tier;
+
+    const bodyRows = fields.map(([label, field]) => {
+      const va = rowA[field], vb = rowB[field];
+      const diff = va !== vb;
+      const cls = diff ? ' class="num compare-diff-cell"' : ' class="num"';
+      const fmtA = field === "spend_threshold_usd" ? fmtSpend(va) : fmtNum(va);
+      const fmtB = field === "spend_threshold_usd" ? fmtSpend(vb) : fmtNum(vb);
+      return `<tr><td style="font-weight:600;color:var(--text-muted)">${label}</td><td${cls}>${fmtA}</td><td${cls}>${fmtB}</td></tr>`;
+    }).join("");
+
+    const notesA = [rowA.tier_notes, rowA.model_notes].filter(Boolean).join(" | ") || "-";
+    const notesB = [rowB.tier_notes, rowB.model_notes].filter(Boolean).join(" | ") || "-";
+    const notesDiff = notesA !== notesB ? ' class="compare-diff-cell"' : "";
+
+    document.getElementById("compare-result").innerHTML = `<div class="table-wrap"><table>
+      <thead><tr><th>Field</th><th class="num">${labelA}</th><th class="num">${labelB}</th></tr></thead>
+      <tbody>${bodyRows}
+        <tr><td style="font-weight:600;color:var(--text-muted)">Notes</td>
+          <td${notesDiff} style="font-size:12px">${notesA}</td>
+          <td${notesDiff} style="font-size:12px">${notesB}</td></tr>
+      </tbody></table></div>`;
+  }
 
   applyUrlParams();
   init();

@@ -203,8 +203,8 @@ To trigger a manual update: Actions -> Weekly Rate Limit Update -> Run workflow.
 
 ### Phase 6 - Insights
 
-- [ ] Rate limit history chart on the live site
-- [ ] Provider comparison view: side-by-side tier diff
+- [x] Rate limit history chart on the live site
+- [x] Provider comparison view: side-by-side tier diff
 - [x] Calculator: enter RPM/TPM/RPD requirements and see which tiers cover them
 
 ---

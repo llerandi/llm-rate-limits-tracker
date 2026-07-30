@@ -25,6 +25,7 @@ CDN_BASE = "https://purge.jsdelivr.net/gh/llerandi/llm-rate-limits-tracker@main"
 STATIC_PATHS = [
     "data/rate-limits.json",
     "data/feed.xml",
+    "data/history/index.json",
 ]
 
 
