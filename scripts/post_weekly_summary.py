@@ -177,8 +177,7 @@ def get_discussion_category_id(repo: str) -> str:
                 return cat["id"]
     if categories:
         return categories[0]["id"]
-    print("No Discussions categories found. Enable Discussions on the repo first.", file=sys.stderr)
-    sys.exit(1)
+    return None
 
 
 def get_repo_id(repo: str) -> str:
@@ -237,8 +236,11 @@ def main() -> None:
     title = f"Weekly LLM Rate Limits Summary - {today}"
     body = build_body(data, old_snap, new_snap, today)
 
-    repo_id = get_repo_id(repo)
     category_id = get_discussion_category_id(repo)
+    if category_id is None:
+        print("Discussions not enabled or no categories found - skipping post.", file=sys.stderr)
+        return
+    repo_id = get_repo_id(repo)
     create_discussion(repo_id, category_id, title, body)
 
 
