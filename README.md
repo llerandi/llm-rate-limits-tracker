@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/github/license/llerandi/llm-rate-limits-tracker)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/llerandi/llm-rate-limits-tracker?style=social)](https://github.com/llerandi/llm-rate-limits-tracker/stargazers)
 [![Last commit](https://img.shields.io/github/last-commit/llerandi/llm-rate-limits-tracker)](https://github.com/llerandi/llm-rate-limits-tracker/commits/main)
-[![Updated weekly](https://img.shields.io/badge/last--updated-2026--07--29-brightgreen)](https://github.com/llerandi/llm-rate-limits-tracker/actions/workflows/update.yaml)
+[![Updated weekly](https://img.shields.io/badge/last--updated-2026--08--03-brightgreen)](https://github.com/llerandi/llm-rate-limits-tracker/actions/workflows/update.yaml)
 [![Python](https://img.shields.io/badge/python-3.13%2B-blue?logo=python)](https://www.python.org/)
 [![Live site](https://img.shields.io/badge/live%20site-GitHub%20Pages-0969da)](https://llerandi.github.io/llm-rate-limits-tracker/)
 
