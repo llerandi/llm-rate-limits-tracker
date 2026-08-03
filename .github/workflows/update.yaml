@@ -63,8 +63,8 @@ jobs:
 
       - name: Update README badge date
         run: |
-          TODAY=$(date +%Y-%m-%d)
-          sed -i "s/last--updated-[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/last--updated-${TODAY}/" README.md
+          BADGE_DATE=$(date +%Y--%m--%d)
+          sed -i "s/last--updated-[0-9]\{4\}--[0-9]\{2\}--[0-9]\{2\}/last--updated-${BADGE_DATE}/" README.md
 
       - name: Commit changes if any
         run: |
