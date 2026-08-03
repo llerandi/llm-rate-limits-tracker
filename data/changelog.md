@@ -5,6 +5,20 @@ Sorted by date (newest first). Source: [`data/history/`](data/history/)
 
 ---
 
+## 2026-08-03
+
+### New models
+
+- **AI21 Labs** Jamba Large
+- **AI21 Labs** Jamba Mini
+- **Qwen** Qwen3.7-Max
+- **Qwen** Qwen3.5-Plus
+- **Qwen** Qwen3.5-Flash
+- **Qwen** Qwen-Plus
+- **Qwen** Qwen-Turbo
+
+---
+
 ## 2026-07-30
 
 ### New models

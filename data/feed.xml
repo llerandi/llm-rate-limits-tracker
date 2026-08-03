@@ -3,13 +3,20 @@
   <title>LLM Rate Limits Tracker - Changes</title>
   <subtitle>Weekly diffs of API rate limits across major LLM providers</subtitle>
   <id>https://github.com/llerandi/llm-rate-limits-tracker/</id>
-  <updated>2026-07-30T00:00:00Z</updated>
+  <updated>2026-08-03T00:00:00Z</updated>
   <link href="https://llerandi.github.io/llm-rate-limits-tracker/" rel="alternate" type="text/html" />
   <link href="https://cdn.jsdelivr.net/gh/llerandi/llm-rate-limits-tracker@main/data/feed.xml" rel="self" type="application/atom+xml" />
   <author>
     <name>LLM Rate Limits Tracker</name>
     <uri>https://github.com/llerandi/llm-rate-limits-tracker</uri>
   </author>
+  <entry>
+    <title>7 rate limit changes (2026-08-03)</title>
+    <id>https://github.com/llerandi/llm-rate-limits-tracker/blob/main/data/history/2026-08-03.json</id>
+    <updated>2026-08-03T00:00:00Z</updated>
+    <link href="https://github.com/llerandi/llm-rate-limits-tracker/blob/main/data/history/2026-08-03.json" rel="alternate" />
+    <content type="html">&lt;h3&gt;New models&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;AI21 Labs Jamba Large (new model)&lt;/li&gt;&lt;li&gt;AI21 Labs Jamba Mini (new model)&lt;/li&gt;&lt;li&gt;Qwen Qwen3.7-Max (new model)&lt;/li&gt;&lt;li&gt;Qwen Qwen3.5-Plus (new model)&lt;/li&gt;&lt;li&gt;Qwen Qwen3.5-Flash (new model)&lt;/li&gt;&lt;li&gt;Qwen Qwen-Plus (new model)&lt;/li&gt;&lt;li&gt;Qwen Qwen-Turbo (new model)&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Full data: &lt;a href="https://cdn.jsdelivr.net/gh/llerandi/llm-rate-limits-tracker@main/data/rate-limits.json"&gt;rate-limits.json&lt;/a&gt; | &lt;a href="https://llerandi.github.io/llm-rate-limits-tracker/"&gt;Live site&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>13 rate limit changes (2026-07-30)</title>
     <id>https://github.com/llerandi/llm-rate-limits-tracker/blob/main/data/history/2026-07-30.json</id>
